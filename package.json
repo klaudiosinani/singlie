@@ -1,0 +1,32 @@
+{
+  "name": "singly",
+  "version": "0.0.0",
+  "description": "⚡ Singly circular & linear linked lists for ES6",
+  "license": "MIT",
+  "repository": "klauscfhq/singly",
+  "author": {
+    "name": "Klaus Sinani",
+    "email": "klauscfhq@protonmail.com",
+    "url": "https://klauscfhq.github.io"
+  },
+  "files": [
+    "index.js",
+    "node.js"
+  ],
+  "keywords": [
+    "singly",
+    "linear",
+    "circular",
+    "linked",
+    "list"
+  ],
+  "scripts": {
+    "test": "xo"
+  },
+  "devDependencies": {
+    "xo": "*"
+  },
+  "xo": {
+    "space": 2
+  }
+}
