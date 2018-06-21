@@ -1,4 +1,3 @@
-// @ts-check
 'use strict';
 const Node = require('./node');
 
