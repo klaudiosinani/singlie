@@ -91,7 +91,7 @@ class Linear {
     return !this._head && !this._length;
   }
 
-  append(...values) {
+  prepend(...values) {
     values.forEach(value => this._addHead(value));
     return this;
   }
@@ -108,7 +108,7 @@ class Linear {
     return this;
   }
 
-  prepend(...values) {
+  append(...values) {
     values.forEach(value => {
       return this.isEmpty() ? this._addHead(value) : this._addNode(value);
     });
@@ -164,7 +164,7 @@ class Linear {
       return;
     }
     const list = new Linear();
-    list.prepend(...this.toArray());
+    list.append(...this.toArray());
     return list._map(func);
   }
 
