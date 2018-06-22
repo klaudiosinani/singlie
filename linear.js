@@ -12,11 +12,11 @@ class Linear {
   }
 
   get head() {
-    return this._head.value;
+    return this.isEmpty() ? undefined : this._head.value;
   }
 
   get last() {
-    return this._last.value;
+    return this.isEmpty() ? undefined : this._last.value;
   }
 
   get length() {
