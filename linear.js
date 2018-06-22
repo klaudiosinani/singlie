@@ -8,7 +8,7 @@ class Linear {
   }
 
   get _last() {
-    return this._traverse(this._head, this.length);
+    return this._traverse(this._head, this.length - 1);
   }
 
   get head() {
@@ -96,15 +96,10 @@ class Linear {
     return this;
   }
 
-  insert({values, index = this.length}) {
-    if (index < 0 || index > this.length) {
-      throw new Error('List index out of bounds');
-    }
-
-    this._arrayify(values).forEach(value => {
-      return (index === 0) ? this._addHead(value) : this._addNode(value, index);
+  insert({value, index = this.length - 1}) {
+    this._arrayify(value).forEach(value => {
+      return (index <= 0) ? this._addHead(value) : this._addNode(value, index);
     });
-
     return this;
   }
 
@@ -139,7 +134,7 @@ class Linear {
     return value;
   }
 
-  remove(index = this.length) {
+  remove(index = this.length - 1) {
     if (!this._isValid(index)) {
       return undefined;
     }
@@ -160,7 +155,7 @@ class Linear {
   }
 
   map(func) {
-    if (this.length === 0) {
+    if (this.isEmpty()) {
       return;
     }
     const list = new Linear();
