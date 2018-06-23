@@ -79,7 +79,7 @@ class Linear {
   }
 
   _map(func, node = this._head) {
-    node._value = func(node._value);
+    node.value = func(node.value);
     return node.next ? this._map(func, node.next) : this;
   }
 
@@ -155,10 +155,12 @@ class Linear {
   }
 
   map(func) {
-    if (this.isEmpty()) {
-      return;
-    }
     const list = new Linear();
+
+    if (this.isEmpty()) {
+      return list;
+    }
+
     list.append(...this.toArray());
     return list._map(func);
   }
