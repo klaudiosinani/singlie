@@ -22,9 +22,11 @@
     "list"
   ],
   "scripts": {
-    "test": "xo"
+    "test": "xo && nyc ava"
   },
   "devDependencies": {
+    "ava": "1.0.0-beta.6",
+    "nyc": "^12.0.2",
     "xo": "*"
   },
   "xo": {
