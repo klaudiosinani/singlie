@@ -13,3 +13,7 @@ yarn.lock
 .idea
 *.swp
 *.swo
+
+# coverage
+.nyc_output
+coverage
