@@ -4,22 +4,70 @@ const {Linear} = require('../.');
 
 const linear = new Linear();
 
-test('is list empty', t => {
+test('empty check', t => {
   t.true(linear.isEmpty());
 });
 
-test('head node of empty list', t => {
+test('head node value', t => {
   t.is(linear.head, undefined);
 });
 
-test('last node of empty list', t => {
-  t.is(linear.head, undefined);
+test('last node value', t => {
+  t.is(linear.last, undefined);
 });
 
-test('get first node of empty list', t => {
+test('head & last values equal', t => {
+  t.is(linear.head, linear.last);
+});
+
+test('get node value', t => {
   t.is(linear.get(0), undefined);
 });
 
-test('length of empty list', t => {
+test('node next', t => {
+  t.throws(() => linear.get(0).next, `Cannot read property 'next' of undefined`);
+});
+
+test('select node', t => {
+  t.is(linear.node(0), undefined);
+});
+
+test('remove node', t => {
+  t.is(linear.remove(0), undefined);
+});
+
+test('set node value', t => {
+  t.throws(() => linear.set({index: 0, value: ''}), `List index out of bounds`);
+});
+
+test('zero length', t => {
   t.is(linear.length, 0);
+});
+
+test('arrayify', t => {
+  t.deepEqual(linear.toArray(), []);
+});
+
+test('join', t => {
+  t.deepEqual(linear.join(), '');
+});
+
+test('map', t => {
+  const mapped = linear.map(x => x);
+  t.deepEqual(linear, mapped);
+});
+
+test('reverse', t => {
+  const mapped = linear.reverse();
+  t.deepEqual(linear, mapped);
+});
+
+test('clear', t => {
+  const cleared = linear.clear();
+  t.deepEqual(linear, cleared);
+});
+
+test('iterate', t => {
+  const iterated = linear.forEach(x => x);
+  t.is(iterated, undefined);
 });
