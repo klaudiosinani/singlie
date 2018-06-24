@@ -84,7 +84,11 @@ class Linear {
   }
 
   _forEach(func, node = this._head) {
-    return node.next ? func(node.value) && this._forEach(func, node.next) : func(node.value);
+    if (node.next) {
+      func(node.value);
+      return this._forEach(func, node.next);
+    }
+    return func(node.value);
   }
 
   isEmpty() {
@@ -145,7 +149,7 @@ class Linear {
     if (this.length === 0) {
       return;
     }
-    return this._forEach(func);
+    this._forEach(func);
   }
 
   toArray() {
