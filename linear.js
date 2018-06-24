@@ -100,7 +100,7 @@ class Linear {
     return this;
   }
 
-  insert({value, index = this.length - 1}) {
+  insert({value, index = this.length}) {
     this._arrayify(value).forEach(value => {
       return (index <= 0) ? this._addHead(value) : this._addNode(value, index);
     });
