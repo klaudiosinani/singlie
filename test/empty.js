@@ -25,7 +25,7 @@ test('get node value', t => {
 });
 
 test('node next', t => {
-  t.throws(() => linear.get(0).next, `Cannot read property 'next' of undefined`);
+  t.throws(() => linear.node(0).next, `Cannot read property 'next' of undefined`);
 });
 
 test('select node', t => {
