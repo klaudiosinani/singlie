@@ -24,7 +24,7 @@ test('get node value', t => {
   t.is(linear.get(0), undefined);
 });
 
-test('node next', t => {
+test('next node', t => {
   t.throws(() => linear.node(0).next, `Cannot read property 'next' of undefined`);
 });
 
