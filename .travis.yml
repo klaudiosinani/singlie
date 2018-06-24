@@ -7,3 +7,4 @@ node_js:
 before_install:
   - npm install --global npm@6.0.0
   - npm --version
+after_success: npx codecov --file=./coverage/lcov.info
