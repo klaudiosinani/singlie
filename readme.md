@@ -21,7 +21,7 @@
 
 ## Description
 
-Progressive and minimal implementation of the circular and linear singly linked list data structures for modern ES6.
+Progressive and minimal implementation of the circular and linear singly linked list data structures in modern ES6.
 
 Come over to [Gitter](https://gitter.im/klauscfhq/singlie) or [Twitter](https://twitter.com/klauscfhq) to share your thoughts on the project.
 
