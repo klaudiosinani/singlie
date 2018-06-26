@@ -178,7 +178,7 @@ For more info on how to contribute to the project, please read the [contributing
 - Fork the repository and clone it to your machine
 - Navigate to your local fork: `cd singlie`
 - Install the project dependencies: `npm install` or `yarn install`
-- Lint code and run the tests: `npm test` or `yarn test`
+- Lint the code and run the tests: `npm test` or `yarn test`
 
 ## Team
 
