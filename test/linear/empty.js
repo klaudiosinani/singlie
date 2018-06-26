@@ -1,6 +1,6 @@
 'use strict';
 const test = require('ava');
-const {Linear} = require('../.');
+const {Linear} = require('../../.');
 
 const linear = new Linear();
 
