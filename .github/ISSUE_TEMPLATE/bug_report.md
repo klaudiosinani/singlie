@@ -18,7 +18,7 @@ If applicable, add screenshots to help explain your problem.
 
 **Technical Info (please complete the following information)**
  - OS:
- - Singly Version:
+ - Singlie Version:
  - Node.js Version:
 
 **Additional context**
