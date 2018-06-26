@@ -30,7 +30,6 @@ Come over to [Gitter](https://gitter.im/klauscfhq/singly) or [Twitter](https://t
 - [Description](#description)
 - [Install](#install)
 - [Usage](#usage)
-- [API](#api)
 - [Development](#development)
 - [Team](#team)
 - [License](#license)
@@ -169,8 +168,6 @@ log(circular.reverse().map(x => `[${x}]`).join('->'));
 // Clear a list
 log(circular.clear()); // => Circular {_head: null, _length: 0}
 ```
-
-## API
 
 ## Development
 
