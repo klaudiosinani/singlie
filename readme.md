@@ -51,6 +51,8 @@ const circular = new Circular();
 
 Singly exposes a progressive and serializable API, that can be utilized through a simple and minimal syntax, allowing you to combine and chain methods effectively.
 
+Usage examples can be also found at the [`test`](https://github.com/klauscfhq/singly/tree/master/test) directory.
+
 ### Linear Singly Linked List
 
 ```js
