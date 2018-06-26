@@ -1,6 +1,6 @@
-# Contributing to Singly
+# Contributing to Singlie
 
-Thank you for taking the time to contribute to Singly!
+Thank you for taking the time to contribute to Singlie!
 
 Please note that this project is released with a [Contributor Code of Conduct](code-of-conduct.md). By participating in this project you agree to abide by its terms.
 
@@ -34,12 +34,13 @@ You may find an issue is assigned, or has the [`assigned` label](https://github.
 ### Submitting an issue
 
 - Search the issue tracker before opening an issue
-- Ensure you're using the latest version of Singly
+- Ensure you're using the latest version of Singlie
 - Use a descriptive title
 - Include as much information as possible;
   - Steps to reproduce the issue
   - Error message
-  - Singly version
+  - Node.js version
+  - Singlie version
   - Operating system **etc**
 
 ### Submitting a pull request
