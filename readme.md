@@ -6,6 +6,10 @@
   ⚡ Singly circular & linear linked lists for ES6
 </h4>
 
+<div align="center">
+  <img alt="Header" src="media/header.png" width="88%">
+</div>
+
 <p align="center">
   <a href="https://travis-ci.org/klauscfhq/singly">
     <img alt="Build Status" src="https://travis-ci.com/klauscfhq/singly.svg?branch=master">
