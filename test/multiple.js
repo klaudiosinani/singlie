@@ -98,7 +98,26 @@ test('prepend', t => {
   t.is(linear.last, 'A');
 });
 
-test('insert', t => {
+test('insert head', t => {
+  linear.clear().prepend('A', 'B');
+  linear.insert({value: ['C', 'D'], index: 0});
+  t.is(linear.get(0), 'D');
+  t.is(linear.get(1), 'C');
+  t.is(linear.get(2), 'B');
+  t.is(linear.get(3), 'A');
+});
+
+test('insert middle', t => {
+  linear.clear().prepend('A', 'B');
+  linear.insert({value: ['C', 'D'], index: 1});
+  t.is(linear.get(0), 'B');
+  t.is(linear.get(1), 'D');
+  t.is(linear.get(2), 'C');
+  t.is(linear.get(3), 'A');
+});
+
+test('insert last', t => {
+  linear.clear().prepend('A', 'B');
   linear.insert({value: ['C', 'D'], index: 2});
   t.is(linear.get(0), 'B');
   t.is(linear.get(1), 'A');
