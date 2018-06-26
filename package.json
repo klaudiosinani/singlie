@@ -12,7 +12,8 @@
   "files": [
     "index.js",
     "node.js",
-    "linear.js"
+    "linear.js",
+    "circular.js"
   ],
   "keywords": [
     "singly",
