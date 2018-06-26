@@ -1,5 +1,5 @@
 <h1 align="center">
-  Singly
+  Singlie
 </h1>
 
 <h4 align="center">
@@ -11,11 +11,11 @@
 </div>
 
 <p align="center">
-  <a href="https://travis-ci.org/klauscfhq/singly">
-    <img alt="Build Status" src="https://travis-ci.com/klauscfhq/singly.svg?branch=master">
+  <a href="https://travis-ci.org/klauscfhq/singlie">
+    <img alt="Build Status" src="https://travis-ci.com/klauscfhq/singlie.svg?branch=master">
   </a>
-  <a href='https://coveralls.io/github/klauscfhq/singly?branch=master'>
-    <img alt="Coverage Status" src="https://coveralls.io/repos/github/klauscfhq/singly/badge.svg?branch=master">
+  <a href='https://coveralls.io/github/klauscfhq/singlie?branch=master'>
+    <img alt="Coverage Status" src="https://coveralls.io/repos/github/klauscfhq/singlie/badge.svg?branch=master">
   </a>
 </p>
 
@@ -23,7 +23,7 @@
 
 Progressive and minimal implementation of the circular and linear singly linked list data structures for modern ES6.
 
-Come over to [Gitter](https://gitter.im/klauscfhq/singly) or [Twitter](https://twitter.com/klauscfhq) to share your thoughts on the project.
+Come over to [Gitter](https://gitter.im/klauscfhq/singlie) or [Twitter](https://twitter.com/klauscfhq) to share your thoughts on the project.
 
 ## Contents
 
@@ -37,26 +37,26 @@ Come over to [Gitter](https://gitter.im/klauscfhq/singly) or [Twitter](https://t
 ## Install
 
 ```bash
-npm install singly
+npm install singlie
 ```
 
 ## Usage
 
 ```js
-const {Circular, Linear} = require('singly');
+const {Circular, Linear} = require('singlie');
 
 const linear = new Linear();
 const circular = new Circular();
 ```
 
-Singly exposes a progressive and serializable API, that can be utilized through a simple and minimal syntax, allowing you to combine and chain methods effectively.
+Singlie exposes a progressive and serializable API, that can be utilized through a simple and minimal syntax, allowing you to combine and chain methods effectively.
 
-Usage examples can be also found at the [`test`](https://github.com/klauscfhq/singly/tree/master/test) directory.
+Usage examples can be also found at the [`test`](https://github.com/klauscfhq/singlie/tree/master/test) directory.
 
 ### Linear Singly Linked List
 
 ```js
-const {Linear} = require('singly');
+const {Linear} = require('singlie');
 
 const linear = new Linear();
 const {log} = console;
@@ -114,7 +114,7 @@ log(linear.clear()); // => Linear {_head: null, _length: 0}
 ### Circular Singly Linked List
 
 ```js
-const {Circular} = require('singly');
+const {Circular} = require('singlie');
 
 const circular = new Circular();
 const {log} = console;
@@ -173,10 +173,10 @@ log(circular.clear()); // => Circular {_head: null, _length: 0}
 
 ## Development
 
-For more info on how to contribute to the project, please read the [contributing guidelines](https://github.com/klauscfhq/singly/blob/master/contributing.md).
+For more info on how to contribute to the project, please read the [contributing guidelines](https://github.com/klauscfhq/singlie/blob/master/contributing.md).
 
 - Fork the repository and clone it to your machine
-- Navigate to your local fork: `cd singly`
+- Navigate to your local fork: `cd singlie`
 - Install the project dependencies: `npm install` or `yarn install`
 - Lint code and run the tests: `npm test` or `yarn test`
 
@@ -186,4 +186,4 @@ For more info on how to contribute to the project, please read the [contributing
 
 ## License
 
-[MIT](https://github.com/klauscfhq/singly/blob/master/license.md)
+[MIT](https://github.com/klauscfhq/singlie/blob/master/license.md)
