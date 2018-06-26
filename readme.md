@@ -43,12 +43,19 @@ npm install singly
 
 ## Usage
 
+```js
+const {Circular, Linear} = require('singly');
+
+const linear = new Linear();
+const circular = new Circular();
+```
+
 Singly exposes a progressive and serializable API, that can be utilized through a simple and minimal syntax, allowing you to combine and chain methods effectively.
 
-### Linear
+### Linear Singly Linked List
 
 ```js
-const {Linear} = require('.');
+const {Linear} = require('singly');
 
 const linear = new Linear();
 const {log} = console;
@@ -100,14 +107,13 @@ log(linear.reverse().map(x => `[${x}]`).join('->'));
 // => [G]->[F]->[E]->[D]->[C]->[B]->[A]
 
 // Clear a list
-log(linear.clear());
-// => Linear {_head: null, _length: 0}
+log(linear.clear()); // => Linear {_head: null, _length: 0}
 ```
 
-### Circular
+### Circular Singly Linked List
 
 ```js
-const {Circular} = require('.');
+const {Circular} = require('singly');
 
 const circular = new Circular();
 const {log} = console;
@@ -161,8 +167,7 @@ log(circular.reverse().map(x => `[${x}]`).join('->'));
 // => [G]->[F]->[E]->[D]->[C]->[B]->[A]
 
 // Clear a list
-log(circular.clear());
-// => Circular {_head: null, _length: 0}
+log(circular.clear()); // => Circular {_head: null, _length: 0}
 ```
 
 ## API
