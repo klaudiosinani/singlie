@@ -11,7 +11,7 @@
 </div>
 
 <p align="center">
-  <a href="https://travis-ci.org/klauscfhq/singlie">
+  <a href="https://travis-ci.com/klauscfhq/singlie">
     <img alt="Build Status" src="https://travis-ci.com/klauscfhq/singlie.svg?branch=master">
   </a>
   <a href='https://coveralls.io/github/klauscfhq/singlie?branch=master'>
