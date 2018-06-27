@@ -362,9 +362,9 @@ list.remove(0);
 Converts the list into an array.
 
 ```js
-linear.append('A', 'B');
+list.append('A', 'B');
 // => {value: 'A', next: {value: 'B', next: null}}
-const array = linear.toArray();
+const array = list.toArray();
 console.log(array);
 // => [ 'A', 'B' ]
 ```
@@ -376,9 +376,9 @@ console.log(array);
 Removes all nodes from the list.
 
 ```js
-linear.append('A', 'B');
+list.append('A', 'B');
 // => {value: 'A', next: {value: 'B', next: null}}
-linear.clear();
+list.clear();
 // => null
 ```
 
