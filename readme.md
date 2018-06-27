@@ -56,7 +56,7 @@ Usage examples can be also found at the [`test`](https://github.com/klauscfhq/si
 
 ### Linear Singly Linked List
 
-Linear singly linked lists can contain multiple nodes, where each node has only a `value` and a `next` attribute. The `value` attribute holds to value stored inside of the node, and the `next` attribute points to the next node in line. The only exception is that the last node of the list, has `null` stored to its `next` attribute, which indicates the lack of further nodes down the line, thus the end of the list. The following example demonstrates the operations that can be performed on any linear singly linked list.
+Linear singly linked lists can contain multiple nodes, where each node has only a `value` and a `next` attribute. The `value` attribute holds the value stored inside of the node, and the `next` attribute points to the next node in line. The only exception, is that the last node of the list has `null` stored to its `next` attribute, which indicates the lack of further nodes down the line, thus the end of the list. The following example demonstrates the operations that can be performed on any linear singly linked list.
 
 ```js
 const {Linear} = require('singlie');
@@ -116,7 +116,7 @@ log(linear.clear()); // => Linear {head: null, length: 0}
 
 ### Circular Singly Linked List
 
-Circular singly linked lists can also contain multiple nodes, where again each node has the same `value` and `next` attributes. The only difference compared to linear lists, is that the last node always points back to the first node / head of the list, thus the list is said to be circular or circularly linked. The following example demonstrates the operations that can be performed on any circular singly linked list:
+Circular singly linked lists can also contain multiple nodes, where again each node has the same `value` and `next` attributes. The only difference compared to linear lists, is that the last node always points back to the first node / head of the list, thus the list is said to be circular or circularly linked. The following example demonstrates the operations that can be performed on any circular singly linked list.
 
 ```js
 const {Circular} = require('singlie');
@@ -212,7 +212,6 @@ Can be one or more comma delimited values. Each value corresponds to a single no
 ```js
 list.append('C');
 // => {value: 'C', next: null}
-
 list.prepend('B', 'A');
 // => {value: 'A', next: {value: 'B', next: {value: 'C', next: null}}}
 ```
@@ -281,7 +280,7 @@ Can be one or more comma delimited values. Each value corresponds to a single no
 
 - Type: `Integer`
 
-Can be an integer corresponding a list index.
+Can be an integer corresponding to a list index.
 
 ```js
 list.append('A', 'B');
@@ -299,12 +298,11 @@ Return the node corresponding to the given index.
 
 - Type: `Integer`
 
-Can be an integer corresponding a list index.
+Can be an integer corresponding to a list index.
 
 ```js
 list.append('A', 'B', 'C', 'D');
 const node = list.node(0);
-
 console.log(node);
 // => {value: 'A', next: {value: 'B', next: [List]}}
 console.log(node.value);
@@ -323,7 +321,7 @@ Return the value of node corresponding to the given index.
 
 - Type: `Integer`
 
-Can be an integer corresponding a list index.
+Can be an integer corresponding to a list index.
 
 ```js
 list.append('A', 'B');
@@ -343,7 +341,7 @@ Removes from the list the node located to the given index.
 
 - Type: `Integer`
 
-Can be an integer corresponding a list index.
+Can be an integer corresponding to a list index.
 
 ```js
 list.append('A', 'B', 'C', 'D');
@@ -423,9 +421,7 @@ Function to execute for each node value.
 const array = [];
 list.append('A', 'B');
 // => {value: 'A', next: {value: 'B', next: null}}
-
 list.forEach(x => array.push(x));
-
 console.log(array);
 // => ['A', 'B'];
 ```
