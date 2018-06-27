@@ -193,8 +193,8 @@ Appends one of more nodes to the list.
 Can be one or more comma delimited values. Each value corresponds to a single node.
 
 ```js
-list.append('A', 'B');
-// => {value: 'A', next: {value: 'B', next: null}}
+list.append('A', 'B', 'C', 'D');
+// => {value: 'A', next: {value: 'B', next: [List]}}
 ```
 
 #### list.`prepend(value[, value])`
@@ -210,10 +210,10 @@ Prepends one of more nodes to the list.
 Can be one or more comma delimited values. Each value corresponds to a single node.
 
 ```js
-list.append('C');
-// => {value: 'C', next: null}
+list.append('C' , 'D');
+// => {value: 'C', next: [List]}
 list.prepend('B', 'A');
-// => {value: 'A', next: {value: 'B', next: {value: 'C', next: null}}}
+// => {value: 'A', next: {value: 'B', next: {value: 'C', next: [List]}}}
 ```
 
 #### list.`head`
@@ -283,9 +283,9 @@ Can be one or more comma delimited values. Each value corresponds to a single no
 Can be an integer corresponding to a list index.
 
 ```js
-list.append('A', 'B');
+list.append('A', 'B', 'E');
 list.insert({value: ['C', 'D'], index: 1});
-// => {value: 'A', next: {value: 'D', next: {value: 'C', next: { value: 'B', next: null}}}}
+// => {value: 'A', next: {value: 'D', next: {value: 'C', next: { value: 'B', next: [List]}}}}
 ```
 
 #### list.`node(index)`
@@ -362,11 +362,11 @@ list.remove(0);
 Converts the list into an array.
 
 ```js
-list.append('A', 'B');
-// => {value: 'A', next: {value: 'B', next: null}}
+list.append('A', 'B', 'C');
+// => {value: 'A', next: {value: 'B', next: [List]}}
 const array = list.toArray();
 console.log(array);
-// => [ 'A', 'B' ]
+// => [ 'A', 'B', 'C' ]
 ```
 
 #### list.`clear()`
@@ -376,8 +376,8 @@ console.log(array);
 Removes all nodes from the list.
 
 ```js
-list.append('A', 'B');
-// => {value: 'A', next: {value: 'B', next: null}}
+list.append('A', 'B', 'C');
+// => {value: 'A', next: {value: 'B', next: [List]}}
 list.clear();
 // => null
 ```
@@ -398,14 +398,14 @@ Specifies a string to separate each pair of adjacent node values of the array.
 If omitted, the node values are separated with a `comma ','`.
 
 ```js
-list.append('A', 'B');
-// => {value: 'A', next: {value: 'B', next: null}}
+list.append('A', 'B', 'C');
+// => {value: 'A', next: {value: 'B', next: [List]}}
 console.log(list.join());
-// => 'A,B'
+// => 'A,B,C'
 console.log(list.join(''));
-// => 'AB'
+// => 'ABC'
 console.log(list.join(' '));
-// => 'A B'
+// => 'A B C'
 ```
 
 #### list.`forEach(function)`
@@ -422,11 +422,11 @@ Function to execute for each node value.
 
 ```js
 const array = [];
-list.append('A', 'B');
-// => {value: 'A', next: {value: 'B', next: null}}
+list.append('A', 'B', 'C');
+// => {value: 'A', next: {value: 'B', next: [List]}}
 list.forEach(x => array.push(x));
 console.log(array);
-// => ['A', 'B'];
+// => [ 'A', 'B', 'C' ];
 ```
 
 #### list.`map(function)`
@@ -442,11 +442,11 @@ Executes a provided function once for each node value.
 Function that produces a new node value for the new list.
 
 ```js
-list.append('A', 'B');
-// => {value: 'A', next: {value: 'B', next: null}}
+list.append('A', 'B', 'C');
+// => {value: 'A', next: {value: 'B', next: [List]}}
 const mapped = list.map(x => `[${x}]`);
 console.log(array.join(' '));
-// => '[A] [B]'
+// => '[A] [B] [C]'
 ```
 
 ## Development
