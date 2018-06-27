@@ -340,8 +340,11 @@ Removes from the list the node located to the given index.
 ##### **`index`**
 
 - Type: `Integer`
+- Default: `list.length - 1`
 
 Can be an integer corresponding to a list index.
+
+If not provided, the last node of the list will be removed.
 
 ```js
 list.append('A', 'B', 'C', 'D');
