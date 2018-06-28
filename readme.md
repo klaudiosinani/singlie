@@ -30,6 +30,7 @@ Come over to [Gitter](https://gitter.im/klauscfhq/singlie) or [Twitter](https://
 - [Description](#description)
 - [Install](#install)
 - [Usage](#usage)
+- [In Depth](#in-depth)
 - [API](#api)
 - [Development](#development)
 - [Team](#team)
@@ -43,16 +44,39 @@ npm install singlie
 
 ## Usage
 
-```js
-const {Circular, Linear} = require('singlie');
-
-const linear = new Linear();
-const circular = new Circular();
-```
-
 Singlie exposes a progressive and serializable API, that can be utilized through a simple and minimal syntax, allowing you to combine and chain methods effectively.
 
 Usage examples can be also found at the [`test`](https://github.com/klauscfhq/singlie/tree/master/test) directory.
+
+```js
+const {Circular, Linear} = require('singlie');
+
+const {log} = console;
+
+const linear = new Linear();
+linear.prepend('A').append('B');
+log(linear.node(0));
+// => Node { value: 'A', next: Node { value: 'B', next: null } }
+log(linear.node(0).next);
+// => Node { value: 'B', next: null }
+log(linear.node(0).next.next);
+// => null
+log(linear.map(x => `[${x}]`).reverse().join(' -> '));
+// => [B] -> [A]
+
+const circular = new Circular();
+circular.append('B').prepend('A');
+log(circular.node(0));
+// => Node { value: 'A', next: Node { value: 'B', next: [Circular] } }
+log(circular.node(0).next);
+// => Node { value: 'B', next: Node { value: 'A', next: [Circular] } }
+log(circular.node(0).next.next);
+// => Node { value: 'A', next: Node { value: 'B', next: [Circular] } }
+log(circular.map(x => `[${x}]`).reverse().toArray());
+// => [ '[B]', '[A]' ]
+```
+
+## In Depth
 
 ### Linear Singly Linked List
 
@@ -285,7 +309,7 @@ Can be an integer corresponding to a list index.
 ```js
 list.append('A', 'B', 'E');
 list.insert({value: ['C', 'D'], index: 1});
-// => {value: 'A', next: {value: 'D', next: {value: 'C', next: { value: 'B', next: [List]}}}}
+// => {value: 'A', next: {value: 'D', next: {value: 'C', next: {value: 'B', next: [List]}}}}
 ```
 
 #### list.`node(index)`
