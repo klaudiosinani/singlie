@@ -21,7 +21,7 @@
 
 ## Description
 
-Progressive and minimal implementation of the circular and linear singly linked list data structures in modern ES6.
+Progressive and functional implementation of the circular and linear singly linked list data structures in modern ES6.
 
 Come over to [Gitter](https://gitter.im/klauscfhq/singlie) or [Twitter](https://twitter.com/klauscfhq) to share your thoughts on the project.
 
@@ -46,7 +46,7 @@ npm install singlie
 
 ## Usage
 
-Singlie exposes a progressive and serializable API, that can be utilized through a simple and minimal syntax, allowing you to combine and chain methods effectively.
+Singlie exposes a minimal, progressive and functional API, that can be utilized through a simple and minimal syntax, allowing you to combine and chain methods effectively.
 
 Usage examples can be also found at the [`test`](https://github.com/klauscfhq/singlie/tree/master/test) directory.
 
