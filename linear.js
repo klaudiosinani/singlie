@@ -1,12 +1,8 @@
 'use strict';
+const List = require('./list');
 const Node = require('./node');
 
-class Linear {
-  constructor() {
-    this._head = null;
-    this._length = 0;
-  }
-
+class Linear extends List {
   get _last() {
     return this._traverse(this._head, this.length - 1);
   }
