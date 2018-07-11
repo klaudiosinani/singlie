@@ -137,7 +137,7 @@ log(linear.reverse().map(x => `[${x}]`).join('->'));
 // => [G]->[F]->[E]->[D]->[C]->[B]->[A]
 
 // Clear the list
-log(linear.clear()); // => Linear {head: null, length: 0}
+log(linear.clear()); // => Linear { head: null, length: 0 }
 ```
 
 ### Circular Singly Linked List
