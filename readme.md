@@ -97,7 +97,7 @@ log(linear.last); // => E
 log(linear.get(0)); // => E
 
 // Return the node corresponding to the index
-log(linear.node(0)); // => Node {value: 'E', next: null}
+log(linear.node(0)); // => Node { value: 'E', next: null }
 log(linear.node(0).value); // => E
 log(linear.node(0).next); // => null
 
@@ -157,7 +157,7 @@ log(circular.last); // => E
 log(circular.get(0)); // => E
 
 // Return the node corresponding to the index
-log(circular.node(0)); // => Node {value: 'E', next: [Circular]}
+log(circular.node(0)); // => Node { value: 'E', next: [Circular] }
 log(circular.node(0).value); // => E
 log(circular.node(0).next.value); // => E
 log(circular.node(0).next.next.value); // => E
@@ -199,7 +199,7 @@ log(circular.reverse().map(x => `[${x}]`).join('->'));
 // => [G]->[F]->[E]->[D]->[C]->[B]->[A]
 
 // Clear the list
-log(circular.clear()); // => Circular {head: null, length: 0}
+log(circular.clear()); // => Circular { head: null, length: 0 }
 ```
 
 ## API
@@ -220,7 +220,7 @@ Can be one or more comma delimited values. Each value corresponds to a single no
 
 ```js
 list.append('A', 'B', 'C', 'D');
-// => {value: 'A', next: {value: 'B', next: [List]}}
+// => { value: 'A', next: { value: 'B', next: [List] } }
 ```
 
 #### list.`prepend(value[, value])`
@@ -237,9 +237,9 @@ Can be one or more comma delimited values. Each value corresponds to a single no
 
 ```js
 list.append('C' , 'D');
-// => {value: 'C', next: [List]}
+// => { value: 'C', next: [List] }
 list.prepend('B', 'A');
-// => {value: 'A', next: {value: 'B', next: {value: 'C', next: [List]}}}
+// => { value: 'A', next: { value: 'B', next: { value: 'C', next: [List] } } }
 ```
 
 #### list.`head`
@@ -311,7 +311,7 @@ Can be an integer corresponding to a list index.
 ```js
 list.append('A', 'B', 'E');
 list.insert({value: ['C', 'D'], index: 1});
-// => {value: 'A', next: {value: 'D', next: {value: 'C', next: {value: 'B', next: [List]}}}}
+// => { value: 'A', next: { value: 'D', next: { value: 'C', next: { value: 'B', next: [List] } } } }
 ```
 
 #### list.`node(index)`
@@ -330,11 +330,11 @@ Can be an integer corresponding to a list index.
 list.append('A', 'B', 'C', 'D');
 const node = list.node(0);
 console.log(node);
-// => {value: 'A', next: {value: 'B', next: [List]}}
+// => { value: 'A', next: { value: 'B', next: [List] } }
 console.log(node.value);
 // => A
 console.log(node.next);
-// => {value: 'B', next: [List]}
+// => { value: 'B', next: [List] }
 ```
 
 #### list.`get(index)`
@@ -374,11 +374,11 @@ If not provided, the last node of the list will be removed.
 
 ```js
 list.append('A', 'B', 'C', 'D');
-// => {value: 'A', next: [List]}
+// => { value: 'A', next: [List] }
 list.remove(0);
-// => {value: 'B', next: [List]}
+// => { value: 'B', next: [List] }
 list.remove(0);
-// => {value: 'C', next: [List]}
+// => { value: 'C', next: [List] }
 ```
 
 #### list.`toArray()`
@@ -389,7 +389,7 @@ Converts the list into an array.
 
 ```js
 list.append('A', 'B', 'C');
-// => {value: 'A', next: {value: 'B', next: [List]}}
+// => { value: 'A', next: { value: 'B', next: [List] } }
 const array = list.toArray();
 console.log(array);
 // => [ 'A', 'B', 'C' ]
@@ -403,7 +403,7 @@ Removes all nodes from the list.
 
 ```js
 list.append('A', 'B', 'C');
-// => {value: 'A', next: {value: 'B', next: [List]}}
+// => { value: 'A', next: { value: 'B', next: [List] } }
 list.clear();
 // => null
 ```
@@ -425,7 +425,7 @@ If omitted, the node values are separated with a `comma ','`.
 
 ```js
 list.append('A', 'B', 'C');
-// => {value: 'A', next: {value: 'B', next: [List]}}
+// => { value: 'A', next: { value: 'B', next: [List] } }
 console.log(list.join());
 // => 'A,B,C'
 console.log(list.join(''));
@@ -449,7 +449,7 @@ Function to execute for each node value.
 ```js
 const array = [];
 list.append('A', 'B', 'C');
-// => {value: 'A', next: {value: 'B', next: [List]}}
+// => { value: 'A', next: { value: 'B', next: [List] } }
 list.forEach(x => array.push(x));
 console.log(array);
 // => [ 'A', 'B', 'C' ];
@@ -469,7 +469,7 @@ Function that produces a new node value for the new list.
 
 ```js
 list.append('A', 'B', 'C');
-// => {value: 'A', next: {value: 'B', next: [List]}}
+// => { value: 'A', next: { value: 'B', next: [List] } }
 const mapped = list.map(x => `[${x}]`);
 console.log(array.join(' '));
 // => '[A] [B] [C]'
