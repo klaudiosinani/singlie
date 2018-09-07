@@ -21,7 +21,7 @@
 
 ## Description
 
-Progressive and functional implementation of the circular and linear singly linked list data structures in modern ES6.
+Progressive implementation of the circular and linear singly linked list data structures in modern ES6.
 
 Come over to [Gitter](https://gitter.im/klauscfhq/singlie) or [Twitter](https://twitter.com/klauscfhq) to share your thoughts on the project.
 
@@ -46,35 +46,33 @@ npm install singlie
 
 ## Usage
 
-Singlie exposes a progressive and functional API, that can be utilized through a simple and minimal syntax, allowing you to combine and chain methods effectively.
+Singlie exposes a progressive and composable API, that can be utilized through a simple and minimal syntax, allowing you to combine and chain methods effectively.
 
 Usage examples can be also found at the [`test`](https://github.com/klauscfhq/singlie/tree/master/test) directory.
 
 ```js
 const {Circular, Linear} = require('singlie');
 
-const {log} = console;
-
 const linear = new Linear();
 linear.prepend('A').append('B');
-log(linear.node(0));
+linear.node(0);
 // => Node { value: 'A', next: Node { value: 'B', next: null } }
-log(linear.node(0).next);
+linear.node(0).next;
 // => Node { value: 'B', next: null }
-log(linear.node(0).next.next);
+linear.node(0).next.next;
 // => null
-log(linear.map(x => `[${x}]`).reverse().join(' -> '));
+linear.map(x => `[${x}]`).reverse().join(' -> ');
 // => [B] -> [A]
 
 const circular = new Circular();
 circular.append('B').prepend('A');
-log(circular.node(0));
+circular.node(0);
 // => Node { value: 'A', next: Node { value: 'B', next: [Circular] } }
-log(circular.node(0).next);
+circular.node(0).next;
 // => Node { value: 'B', next: Node { value: 'A', next: [Circular] } }
-log(circular.node(0).next.next);
+circular.node(0).next.next;
 // => Node { value: 'A', next: Node { value: 'B', next: [Circular] } }
-log(circular.map(x => `[${x}]`).reverse().toArray());
+circular.map(x => `[${x}]`).reverse().toArray();
 // => [ '[B]', '[A]' ]
 ```
 
@@ -92,39 +90,39 @@ const {log} = console;
 
 // Append a node holding the value `E`
 linear.append('E');
-log(linear.head); // => E
-log(linear.last); // => E
-log(linear.get(0)); // => E
+linear.head; // => E
+linear.last; // => E
+linear.get(0); // => E
 
 // Return the node corresponding to the index
-log(linear.node(0)); // => Node { value: 'E', next: null }
-log(linear.node(0).value); // => E
-log(linear.node(0).next); // => null
+linear.node(0); // => Node { value: 'E', next: null }
+linear.node(0).value; // => E
+linear.node(0).next; // => null
 
 // Append multiple nodes at once
 linear.append('F', 'G');
-log(linear.length); // => 3
-log(linear.node(0).next.value); // => F
-log(linear.node(0).next.next.value); // => G
-log(linear.toArray()); // => [ 'E', 'F', 'G' ]
+linear.length; // => 3
+linear.node(0).next.value; // => F
+linear.node(0).next.next.value; // => G
+linear.toArray(); // => [ 'E', 'F', 'G' ]
 
 // Prepend multiple nodes at once
 linear.prepend('B', 'A');
-log(linear.join(' ')); // => A B E F G
+linear.join(' '); // => A B E F G
 
 // Insert multiple nodes to the given index
 linear.insert({value: ['D', 'C', 'X'], index: 2});
-log(linear.join(' ')); // => A B X C D E F G
+linear.join(' '); // => A B X C D E F G
 
 // Remove the node corresponding to the index
 linear.remove(2);
-log(linear.join(' ')); // => A B C D E F G
+linear.join(' '); // => A B C D E F G
 
 // Update the value of the node corresponding to the index
 linear.node(linear.length - 1).value = '!';
-log(linear.join(' ')); // => A B C D E F !
+linear.join(' '); // => A B C D E F !
 linear.set({value: 'G', index: linear.length - 1});
-log(linear.join(' ')); // => A B C D E F G
+linear.join(' '); // => A B C D E F G
 
 // Iterate over the list
 const array = [];
@@ -133,11 +131,11 @@ log(array);
 // => [ 'A', 'B', 'C', 'D', 'E', 'F', 'G' ]
 
 // Chain multiple methods
-log(linear.reverse().map(x => `[${x}]`).join('->'));
+linear.reverse().map(x => `[${x}]`).join('->');
 // => [G]->[F]->[E]->[D]->[C]->[B]->[A]
 
 // Clear the list
-log(linear.clear()); // => Linear { head: null, length: 0 }
+linear.clear(); // => Linear { head: null, length: 0 }
 ```
 
 ### Circular Singly Linked List
@@ -152,41 +150,41 @@ const {log} = console;
 
 // Append a node holding the value `E`
 circular.append('E');
-log(circular.head); // => E
-log(circular.last); // => E
-log(circular.get(0)); // => E
+circular.head; // => E
+circular.last; // => E
+circular.get(0); // => E
 
 // Return the node corresponding to the index
-log(circular.node(0)); // => Node { value: 'E', next: [Circular] }
-log(circular.node(0).value); // => E
-log(circular.node(0).next.value); // => E
-log(circular.node(0).next.next.value); // => E
+circular.node(0); // => Node { value: 'E', next: [Circular] }
+circular.node(0).value; // => E
+circular.node(0).next.value; // => E
+circular.node(0).next.next.value; // => E
 
 // Append multiple nodes at once
 circular.append('F', 'G');
-log(circular.length); // => 3
-log(circular.node(0).next.value); // => F
-log(circular.node(0).next.next.value); // => G
-log(circular.node(0).next.next.next.value); // => E
-log(circular.toArray()); // => [ 'E', 'F', 'G' ]
+circular.length; // => 3
+circular.node(0).next.value; // => F
+circular.node(0).next.next.value; // => G
+circular.node(0).next.next.next.value; // => E
+circular.toArray(); // => [ 'E', 'F', 'G' ]
 
 // Prepend multiple nodes at once
 circular.prepend('B', 'A');
-log(circular.join(' ')); // => A B E F G
+circular.join(' '); // => A B E F G
 
 // Insert multiple nodes to the given index
 circular.insert({value: ['D', 'C', 'X'], index: 2});
-log(circular.join(' ')); // => A B X C D E F G
+circular.join(' '); // => A B X C D E F G
 
 // Remove the node corresponding to the index
 circular.remove(2);
-log(circular.join(' ')); // => A B C D E F G
+circular.join(' '); // => A B C D E F G
 
 // Update the value of the node corresponding to the index
 circular.node(circular.length - 1).value = '!';
-log(circular.join(' ')); // => A B C D E F !
+circular.join(' '); // => A B C D E F !
 circular.set({value: 'G', index: circular.length - 1});
-log(circular.join(' ')); // => A B C D E F G
+circular.join(' '); // => A B C D E F G
 
 // Iterate over the list
 const array = [];
@@ -195,11 +193,11 @@ log(array);
 // => [ 'A', 'B', 'C', 'D', 'E', 'F', 'G' ]
 
 // Chain multiple methods
-log(circular.reverse().map(x => `[${x}]`).join('->'));
+circular.reverse().map(x => `[${x}]`).join('->');
 // => [G]->[F]->[E]->[D]->[C]->[B]->[A]
 
 // Clear the list
-log(circular.clear()); // => Circular { head: null, length: 0 }
+circular.clear(); // => Circular { head: null, length: 0 }
 ```
 
 ## API
@@ -250,7 +248,7 @@ Returns the value of the first node / head on the list.
 
 ```js
 list.append('A', 'B');
-console.log(list.head);
+list.head;
 // => A
 ```
 
@@ -262,7 +260,7 @@ Returns the value of the last node on the list.
 
 ```js
 list.append('A', 'B');
-console.log(list.last);
+list.last;
 // => B
 ```
 
@@ -274,7 +272,7 @@ Returns the length of the list.
 
 ```js
 list.append('A', 'B');
-console.log(list.length);
+list.length;
 // => 2
 ```
 
@@ -286,7 +284,7 @@ Checks whether or not the list is empty.
 
 ```js
 list.append('A', 'B');
-console.log(list.isEmpty());
+list.isEmpty();
 // => false
 ```
 
@@ -329,11 +327,10 @@ Can be an integer corresponding to a list index.
 ```js
 list.append('A', 'B', 'C', 'D');
 const node = list.node(0);
-console.log(node);
 // => { value: 'A', next: { value: 'B', next: [List] } }
-console.log(node.value);
+node.value;
 // => A
-console.log(node.next);
+node.next;
 // => { value: 'B', next: [List] }
 ```
 
@@ -351,9 +348,10 @@ Can be an integer corresponding to a list index.
 
 ```js
 list.append('A', 'B');
-console.log(list.get(0))
+
+list.get(0);
 // => A
-console.log(list.get(0))
+list.get(0);
 // => B
 ```
 
@@ -391,7 +389,6 @@ Converts the list into an array.
 list.append('A', 'B', 'C');
 // => { value: 'A', next: { value: 'B', next: [List] } }
 const array = list.toArray();
-console.log(array);
 // => [ 'A', 'B', 'C' ]
 ```
 
@@ -426,11 +423,11 @@ If omitted, the node values are separated with a `comma ','`.
 ```js
 list.append('A', 'B', 'C');
 // => { value: 'A', next: { value: 'B', next: [List] } }
-console.log(list.join());
+list.join();
 // => 'A,B,C'
-console.log(list.join(''));
+list.join('');
 // => 'ABC'
-console.log(list.join(' '));
+list.join(' ');
 // => 'A B C'
 ```
 
@@ -471,7 +468,7 @@ Function that produces a new node value for the new list.
 list.append('A', 'B', 'C');
 // => { value: 'A', next: { value: 'B', next: [List] } }
 const mapped = list.map(x => `[${x}]`);
-console.log(array.join(' '));
+array.join(' ');
 // => '[A] [B] [C]'
 ```
 
