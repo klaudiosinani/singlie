@@ -25,7 +25,7 @@ test('get node value', t => {
 });
 
 test('next node', t => {
-  t.throws(() => circular.node(0).next, `Cannot read property 'next' of undefined`);
+  t.throws(() => circular.node(0).next, 'Cannot read property \'next\' of undefined');
 });
 
 test('select node', t => {
@@ -37,7 +37,7 @@ test('remove node', t => {
 });
 
 test('set node value', t => {
-  t.throws(() => circular.set({index: 0, value: ''}), `List index out of bounds`);
+  t.throws(() => circular.set({index: 0, value: ''}), 'List index out of bounds');
 });
 
 test('zero length', t => {
