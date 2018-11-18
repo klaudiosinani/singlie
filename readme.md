@@ -11,11 +11,11 @@
 </div>
 
 <p align="center">
-  <a href="https://travis-ci.com/klauscfhq/singlie">
-    <img alt="Build Status" src="https://travis-ci.com/klauscfhq/singlie.svg?branch=master">
+  <a href="https://travis-ci.com/klaussinani/singlie">
+    <img alt="Build Status" src="https://travis-ci.com/klaussinani/singlie.svg?branch=master">
   </a>
-  <a href='https://coveralls.io/github/klauscfhq/singlie?branch=master'>
-    <img alt="Coverage Status" src="https://coveralls.io/repos/github/klauscfhq/singlie/badge.svg?branch=master">
+  <a href='https://coveralls.io/github/klaussinani/singlie?branch=master'>
+    <img alt="Coverage Status" src="https://coveralls.io/repos/github/klaussinani/singlie/badge.svg?branch=master">
   </a>
 </p>
 
@@ -23,9 +23,9 @@
 
 Progressive implementation of the circular and linear singly linked list data structures in modern ES6.
 
-Come over to [Gitter](https://gitter.im/klauscfhq/singlie) or [Twitter](https://twitter.com/klauscfhq) to share your thoughts on the project.
+Come over to [Gitter](https://gitter.im/klaussinani/singlie) or [Twitter](https://twitter.com/klaussinani) to share your thoughts on the project.
 
-Visit the [contributing guidelines](https://github.com/klauscfhq/singlie/blob/master/contributing.md#translating-documentation) to learn more on how to translate this document into more languages.
+Visit the [contributing guidelines](https://github.com/klaussinani/singlie/blob/master/contributing.md#translating-documentation) to learn more on how to translate this document into more languages.
 
 ## Contents
 
@@ -48,7 +48,7 @@ npm install singlie
 
 Singlie exposes a progressive and composable API, that can be utilized through a simple and minimal syntax, allowing you to combine and chain methods effectively.
 
-Usage examples can be also found at the [`test`](https://github.com/klauscfhq/singlie/tree/master/test) directory.
+Usage examples can be also found at the [`test`](https://github.com/klaussinani/singlie/tree/master/test) directory.
 
 ```js
 const {Circular, Linear} = require('singlie');
@@ -474,7 +474,7 @@ array.join(' ');
 
 ## Development
 
-For more info on how to contribute to the project, please read the [contributing guidelines](https://github.com/klauscfhq/singlie/blob/master/contributing.md).
+For more info on how to contribute to the project, please read the [contributing guidelines](https://github.com/klaussinani/singlie/blob/master/contributing.md).
 
 - Fork the repository and clone it to your machine
 - Navigate to your local fork: `cd singlie`
@@ -483,8 +483,8 @@ For more info on how to contribute to the project, please read the [contributing
 
 ## Team
 
-- Klaus Sinani [(@klauscfhq)](https://github.com/klauscfhq)
+- Klaus Sinani [(@klaussinani)](https://github.com/klaussinani)
 
 ## License
 
-[MIT](https://github.com/klauscfhq/singlie/blob/master/license.md)
+[MIT](https://github.com/klaussinani/singlie/blob/master/license.md)
