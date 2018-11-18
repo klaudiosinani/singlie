@@ -3,11 +3,11 @@
   "version": "1.0.1",
   "description": "⚡ Singly circular & linear linked lists for ES6",
   "license": "MIT",
-  "repository": "klauscfhq/singlie",
+  "repository": "klaussinani/singlie",
   "author": {
     "name": "Klaus Sinani",
-    "email": "klauscfhq@protonmail.com",
-    "url": "https://klauscfhq.github.io"
+    "email": "klaussinani@gmail.com",
+    "url": "https://klaussinani.github.io"
   },
   "files": [
     "index.js",
