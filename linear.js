@@ -84,6 +84,7 @@ class Linear extends List {
       func(node.value);
       return this._forEach(func, node.next);
     }
+
     return func(node.value);
   }
 
@@ -114,6 +115,7 @@ class Linear extends List {
     if (!this._isValid(index)) {
       return undefined;
     }
+
     return this._getNode(index);
   }
 
@@ -121,6 +123,7 @@ class Linear extends List {
     if (!this._isValid(index)) {
       throw new Error('List index out of bounds');
     }
+
     const target = this._getNode(index);
     target.value = value;
     return this;
@@ -130,6 +133,7 @@ class Linear extends List {
     if (!this._isValid(index)) {
       return undefined;
     }
+
     const {value} = this._getNode(index);
     return value;
   }
@@ -138,6 +142,7 @@ class Linear extends List {
     if (!this._isValid(index)) {
       return undefined;
     }
+
     return (index === 0) ? this._removeHead() : this._removeNode(index);
   }
 
@@ -145,6 +150,7 @@ class Linear extends List {
     if (this.length === 0) {
       return;
     }
+
     this._forEach(func);
   }
 
@@ -173,6 +179,7 @@ class Linear extends List {
     if (this.isEmpty()) {
       return this;
     }
+
     const swaps = Math.floor(this.length / 2) - 1;
     return this._swap(this._head, this.length, swaps);
   }
