@@ -1,5 +1,5 @@
 'use strict';
-const Circular = require('./circular');
-const Linear = require('./linear');
+const Circular = require('./src/circular');
+const Linear = require('./src/linear');
 
 module.exports = Object.assign({}, {Circular}, {Linear});
