@@ -1,6 +1,6 @@
 'use strict';
 const test = require('ava');
-const Node = require('../../node');
+const Node = require('../../src/node');
 const {Circular} = require('../../.');
 
 const circular = new Circular();
