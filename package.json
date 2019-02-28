@@ -11,10 +11,7 @@
   },
   "files": [
     "index.js",
-    "node.js",
-    "list.js",
-    "linear.js",
-    "circular.js"
+    "src"
   ],
   "keywords": [
     "singlie",
