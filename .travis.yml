@@ -4,6 +4,6 @@ node_js:
   - 8
   - 6
 before_install:
-  - npm install --global npm@6.5.0
+  - npm install --global npm@6.8.0
   - npm --version
 after_success: npm run coveralls
