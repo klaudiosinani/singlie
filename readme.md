@@ -40,6 +40,14 @@ Visit the [contributing guidelines](https://github.com/klaussinani/singlie/blob/
 
 ## Install
 
+### Yarn
+
+```bash
+yarn add singlie
+```
+
+### NPM
+
 ```bash
 npm install singlie
 ```
