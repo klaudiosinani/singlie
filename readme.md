@@ -480,6 +480,50 @@ array.join(' ');
 // => '[A] [B] [C]'
 ```
 
+Also available, along with the `Circular` and `Linear` exposed classes, is the `Node` class, mainly useful for testing purposes, since it can be utilized to compare nodes residing in linear & circular linked lists. The class has a unary constructor method, which accepts an object containing a single `'value'` attribute, representing the value stored in the created instance. 
+
+Additionally, each `Node` instance has the following two public properties: 
+
+#### node.`value`
+
+- Return Type: `any`
+
+The value that the node contains.
+
+```js
+const {Node} = require('singlie');
+
+const node = new Node({ value: 'A' });
+// => { value: 'A', next: null }
+
+node.value;
+//=> 'A'
+
+node.value = 'B' // Update the `value` attribute to 'B'
+// => { value: 'B', next: null }
+```
+
+##### node.`next`
+
+- Return Type: `Node | null`
+
+The next node in line, that the targeted node instance points to.
+
+```js
+const {Node} = require('singlie');
+
+const node1 = new Node({ value: 'A' });
+// => { value: 'A', next: null }
+
+node1.next
+//=> null
+
+const node2 = new Node({ value: 'B' });
+
+node1.next = node2; // `node1` now points to `node2`
+//=> { value: 'A', next: { value: 'B', next: null } }
+```
+
 ## Development
 
 For more info on how to contribute to the project, please read the [contributing guidelines](https://github.com/klaussinani/singlie/blob/master/contributing.md).
