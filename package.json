@@ -23,6 +23,7 @@
     "data",
     "structure"
   ],
+  "types": "types/singlie.d.ts",
   "scripts": {
     "test": "xo && nyc ava",
     "coveralls": "nyc report --reporter=text-lcov | coveralls"
