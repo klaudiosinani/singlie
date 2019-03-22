@@ -1,7 +1,6 @@
 'use strict';
 const test = require('ava');
-const Node = require('../../src/node');
-const {Linear} = require('../../.');
+const {Linear, Node} = require('../../.');
 
 const linear = new Linear();
 
