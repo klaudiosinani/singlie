@@ -503,7 +503,7 @@ node.value = 'B' // Update the `value` attribute to 'B'
 // => { value: 'B', next: null }
 ```
 
-##### node.`next`
+#### node.`next`
 
 - Return Type: `Node | null`
 
