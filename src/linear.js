@@ -74,18 +74,18 @@ class Linear extends List {
     return swaps > 0 ? this._swap(x.next, index - 1, swaps - 1) : this;
   }
 
-  _map(func, node = this._head) {
-    node.value = func(node.value);
-    return node.next ? this._map(func, node.next) : this;
+  _map(fn, node = this._head) {
+    node.value = fn(node.value);
+    return node.next ? this._map(fn, node.next) : this;
   }
 
-  _forEach(func, node = this._head) {
+  _forEach(fn, node = this._head) {
     if (node.next) {
-      func(node.value);
-      return this._forEach(func, node.next);
+      fn(node.value);
+      return this._forEach(fn, node.next);
     }
 
-    return func(node.value);
+    return fn(node.value);
   }
 
   isEmpty() {
@@ -146,12 +146,12 @@ class Linear extends List {
     return (index === 0) ? this._removeHead() : this._removeNode(index);
   }
 
-  forEach(func) {
+  forEach(fn) {
     if (this.length === 0) {
       return;
     }
 
-    this._forEach(func);
+    this._forEach(fn);
   }
 
   toArray() {
@@ -160,7 +160,7 @@ class Linear extends List {
     return array;
   }
 
-  map(func) {
+  map(fn) {
     const list = new Linear();
 
     if (this.isEmpty()) {
@@ -168,7 +168,7 @@ class Linear extends List {
     }
 
     list.append(...this.toArray());
-    return list._map(func);
+    return list._map(fn);
   }
 
   join(string) {
