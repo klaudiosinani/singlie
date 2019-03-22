@@ -25,7 +25,8 @@
   ],
   "types": "types/singlie.d.ts",
   "scripts": {
-    "test": "xo && nyc ava",
+    "lint": "xo",
+    "test": "npm run lint && nyc ava",
     "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "devDependencies": {
