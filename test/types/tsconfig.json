@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "strict": true,
+    "strictNullChecks": false,
+    "target": "ES2017"
+  }
+}
