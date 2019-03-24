@@ -30,7 +30,7 @@ test('select node', t => {
 });
 
 test('next node', t => {
-  const node = new Node({value: 'B'});
+  const node = new Node('B');
   t.deepEqual(linear.node(0).next, node);
 });
 

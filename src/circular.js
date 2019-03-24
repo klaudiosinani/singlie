@@ -37,7 +37,7 @@ class Circular extends List {
 
   _addHead(value) {
     const {_head} = this;
-    const node = new Node({value});
+    const node = new Node(value);
     this._head = node;
     this._head.next = this.length === 0 ? node : _head;
     this._length++;
@@ -46,7 +46,7 @@ class Circular extends List {
   }
 
   _addNode(value, index = this.length) {
-    const node = new Node({value});
+    const node = new Node(value);
     const prev = this._getNode(index - 1);
     node.next = prev.next;
     this._length++;
