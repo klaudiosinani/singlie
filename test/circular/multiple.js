@@ -24,15 +24,15 @@ test('get nodes value', t => {
 });
 
 test('select node', t => {
-  const a = new Node({value: 'A'});
-  const b = new Node({value: 'B'});
+  const a = new Node('A');
+  const b = new Node('B');
   [a.next, b.next] = [b, a];
   t.deepEqual(circular.node(1), b);
 });
 
 test('next node', t => {
-  const a = new Node({value: 'A'});
-  const b = new Node({value: 'B'});
+  const a = new Node('A');
+  const b = new Node('B');
   [a.next, b.next] = [b, a];
   t.deepEqual(circular.node(0).next, b);
 });

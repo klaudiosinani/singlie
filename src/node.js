@@ -1,8 +1,8 @@
 'use strict';
 
 class Node {
-  constructor(options = {}) {
-    this._value = options.value;
+  constructor(value) {
+    this._value = value;
     this._next = null;
   }
 

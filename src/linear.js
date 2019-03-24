@@ -37,14 +37,14 @@ class Linear extends List {
 
   _addHead(value) {
     const {_head} = this;
-    this._head = new Node({value});
+    this._head = new Node(value);
     this._head.next = _head;
     this._length++;
     return this;
   }
 
   _addNode(value, index = this.length) {
-    const node = new Node({value});
+    const node = new Node(value);
     const prev = this._getNode(index - 1);
     node.next = prev.next;
     prev.next = node;
