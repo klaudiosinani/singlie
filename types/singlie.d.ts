@@ -1,6 +1,6 @@
 declare namespace node {
   export interface Constructor {
-    new (options?: { value?: any }): Instance;
+    new (value?: any): Instance;
   }
 
   export interface Instance {
