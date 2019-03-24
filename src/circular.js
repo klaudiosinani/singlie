@@ -7,24 +7,8 @@ class Circular extends List {
     return this._traverse(this._head, this.length - 1);
   }
 
-  get head() {
-    return this.isEmpty() ? undefined : this._head.value;
-  }
-
   get last() {
     return this.isEmpty() ? undefined : this._last.value;
-  }
-
-  get length() {
-    return this._length;
-  }
-
-  _arrayify(value) {
-    return Array.isArray(value) ? value : [value];
-  }
-
-  _isValid(index) {
-    return index >= 0 && index < this.length;
   }
 
   _traverse(node, index) {
@@ -89,10 +73,6 @@ class Circular extends List {
     }
 
     return fn(node.value);
-  }
-
-  isEmpty() {
-    return !this._head && !this._length;
   }
 
   prepend(...values) {
