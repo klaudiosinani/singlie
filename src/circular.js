@@ -3,14 +3,6 @@ const List = require('./list');
 const Node = require('./node');
 
 class Circular extends List {
-  get _last() {
-    return this._traverse(this._head, this.length - 1);
-  }
-
-  get last() {
-    return this.isEmpty() ? undefined : this._last.value;
-  }
-
   _addHead(value) {
     const {_head} = this;
     const node = new Node(value);
@@ -23,10 +15,10 @@ class Circular extends List {
 
   _addNode(value, index = this.length) {
     const node = new Node(value);
-    const prev = this._getNode(index - 1);
+    const prev = this.node(index - 1);
     node.next = prev.next;
-    this._length++;
     prev.next = node;
+    this._length++;
     return this;
   }
 
