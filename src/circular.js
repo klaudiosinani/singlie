@@ -170,12 +170,6 @@ class Circular extends List {
     const swaps = Math.floor(this.length / 2) - 1;
     return this._swap(this._head, this.length, swaps);
   }
-
-  clear() {
-    this._head = null;
-    this._length = 0;
-    return this;
-  }
 }
 
 module.exports = Circular;
