@@ -145,13 +145,8 @@ class Circular extends List {
 
   map(fn) {
     const list = new Circular();
-
-    if (this.length === 0) {
-      return list;
-    }
-
-    list.append(...this.toArray());
-    return list._map(fn);
+    this.forEach(x => list.append(fn(x)));
+    return list;
   }
 
   join(string) {
