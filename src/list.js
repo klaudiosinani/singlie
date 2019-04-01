@@ -33,6 +33,11 @@ class List {
     return this;
   }
 
+  get(index) {
+    const {value} = this.node(index);
+    return value;
+  }
+
   isCircular() {
     return this.constructor.name === 'Circular';
   }
