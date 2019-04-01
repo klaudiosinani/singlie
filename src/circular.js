@@ -11,14 +11,6 @@ class Circular extends List {
     return this.isEmpty() ? undefined : this._last.value;
   }
 
-  _traverse(node, index) {
-    return (node.next !== this._head && index > 0) ? this._traverse(node.next, index - 1) : node;
-  }
-
-  _getNode(index) {
-    return this._traverse(this._head, index);
-  }
-
   _addHead(value) {
     const {_head} = this;
     const node = new Node(value);
@@ -93,14 +85,6 @@ class Circular extends List {
       return this.isEmpty() ? this._addHead(value) : this._addNode(value);
     });
     return this;
-  }
-
-  node(index) {
-    if (!this._isValid(index)) {
-      return undefined;
-    }
-
-    return this._getNode(index);
   }
 
   set({value, index}) {
