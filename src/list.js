@@ -60,6 +60,12 @@ class List {
 
     return node;
   }
+
+  set({value, index}) {
+    const node = this.node(index);
+    node.value = value;
+    return this;
+  }
 }
 
 module.exports = List;
