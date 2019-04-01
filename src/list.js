@@ -7,7 +7,7 @@ class List {
   }
 
   get head() {
-    return this.isEmpty() ? undefined : this._head.value;
+    return this._head;
   }
 
   get length() {
