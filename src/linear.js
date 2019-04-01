@@ -141,8 +141,21 @@ class Linear extends List {
     return list;
   }
 
-  join(string) {
-    return this.toArray().join(string);
+  join(separator = ',') {
+    let result = '';
+    let {_head: node} = this;
+
+    while (node) {
+      result += node.value;
+
+      if (node.next) {
+        result += separator;
+      }
+
+      node = node.next;
+    }
+
+    return result;
   }
 
   reverse() {
