@@ -79,15 +79,6 @@ class Circular extends List {
     return this;
   }
 
-  get(index) {
-    if (!this._isValid(index)) {
-      return undefined;
-    }
-
-    const {value} = this._getNode(index);
-    return value;
-  }
-
   remove(index = this.length - 1) {
     if (!this._isValid(index)) {
       return undefined;
