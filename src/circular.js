@@ -66,15 +66,6 @@ class Circular extends List {
     return node.next === this._head ? this : this._map(fn, node.next);
   }
 
-  _forEach(fn, node = this._head) {
-    if (node.next !== this._head) {
-      fn(node.value);
-      return this._forEach(fn, node.next);
-    }
-
-    return fn(node.value);
-  }
-
   prepend(...values) {
     values.forEach(value => this._addHead(value));
     return this;
@@ -134,11 +125,16 @@ class Circular extends List {
   }
 
   forEach(fn) {
-    if (this.length === 0) {
-      return;
+    let {_head: node} = this;
+
+    if (node) {
+      do {
+        fn(node.value);
+        node = node.next;
+      } while (node !== this._head);
     }
 
-    return this._forEach(fn);
+    return this;
   }
 
   toArray() {

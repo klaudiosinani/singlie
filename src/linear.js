@@ -63,15 +63,6 @@ class Linear extends List {
     return node.next ? this._map(fn, node.next) : this;
   }
 
-  _forEach(fn, node = this._head) {
-    if (node.next) {
-      fn(node.value);
-      return this._forEach(fn, node.next);
-    }
-
-    return fn(node.value);
-  }
-
   prepend(...values) {
     values.forEach(value => this._addHead(value));
     return this;
@@ -127,11 +118,14 @@ class Linear extends List {
   }
 
   forEach(fn) {
-    if (this.length === 0) {
-      return;
+    let {_head: node} = this;
+
+    while (node) {
+      fn(node.value);
+      node = node.next;
     }
 
-    this._forEach(fn);
+    return this;
   }
 
   toArray() {
