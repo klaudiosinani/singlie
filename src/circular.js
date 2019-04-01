@@ -150,8 +150,23 @@ class Circular extends List {
     return list;
   }
 
-  join(string) {
-    return this.toArray().join(string);
+  join(separator = ',') {
+    let result = '';
+    let {_head: node} = this;
+
+    if (node) {
+      do {
+        result += node.value;
+
+        if (node.next !== this._head) {
+          result += separator;
+        }
+
+        node = node.next;
+      } while (node !== this._head);
+    }
+
+    return result;
   }
 
   reverse() {
