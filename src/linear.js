@@ -144,6 +144,13 @@ class Linear extends List {
     return array;
   }
 
+  toCircular() {
+    const Circular = require('./circular');
+    const list = new Circular();
+    this.forEach(x => list.append(x));
+    return list;
+  }
+
   map(fn) {
     const list = new Linear();
     this.forEach(x => list.append(fn(x)));
