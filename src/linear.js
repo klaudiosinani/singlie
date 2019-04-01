@@ -136,13 +136,8 @@ class Linear extends List {
 
   map(fn) {
     const list = new Linear();
-
-    if (this.isEmpty()) {
-      return list;
-    }
-
-    list.append(...this.toArray());
-    return list._map(fn);
+    this.forEach(x => list.append(fn(x)));
+    return list;
   }
 
   join(string) {
