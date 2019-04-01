@@ -2,8 +2,8 @@
 
 class Node {
   constructor(value) {
-    this._value = value;
     this._next = null;
+    this._value = value;
   }
 
   get next() {
