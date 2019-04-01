@@ -35,6 +35,10 @@ class List {
   isEmpty() {
     return !this._head && this._length === 0;
   }
+
+  isLinear() {
+    return this.constructor.name === 'Linear';
+  }
 }
 
 module.exports = List;
