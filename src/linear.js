@@ -3,14 +3,6 @@ const List = require('./list');
 const Node = require('./node');
 
 class Linear extends List {
-  get _last() {
-    return this._traverse(this._head, this.length - 1);
-  }
-
-  get last() {
-    return this.isEmpty() ? undefined : this._last.value;
-  }
-
   _addHead(value) {
     const {_head} = this;
     this._head = new Node(value);

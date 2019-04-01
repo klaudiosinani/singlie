@@ -3,11 +3,16 @@
 class List {
   constructor() {
     this._head = null;
+    this._last = null;
     this._length = 0;
   }
 
   get head() {
     return this._head;
+  }
+
+  get last() {
+    return this._last;
   }
 
   get length() {
