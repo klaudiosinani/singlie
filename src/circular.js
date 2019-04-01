@@ -71,6 +71,16 @@ class Circular extends List {
     return this;
   }
 
+  reduce(fn, acc) {
+    let result = acc;
+
+    this.forEach(x => {
+      result = fn(result, x);
+    });
+
+    return result;
+  }
+
   insert({value, index = this.length}) {
     this._arrayify(value).forEach(value => {
       return (index <= 0) ? this._addHead(value) : this._addNode(value, index);
