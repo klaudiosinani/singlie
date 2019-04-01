@@ -79,16 +79,6 @@ class Circular extends List {
     return this;
   }
 
-  set({value, index}) {
-    if (!this._isValid(index)) {
-      throw new Error('List index out of bounds');
-    }
-
-    const target = this._getNode(index);
-    target.value = value;
-    return this;
-  }
-
   get(index) {
     if (!this._isValid(index)) {
       return undefined;
