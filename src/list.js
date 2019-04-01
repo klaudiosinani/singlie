@@ -28,6 +28,10 @@ class List {
     return this;
   }
 
+  isCircular() {
+    return this.constructor.name === 'Circular';
+  }
+
   isEmpty() {
     return !this._head && this._length === 0;
   }
