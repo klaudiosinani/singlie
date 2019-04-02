@@ -9,11 +9,11 @@ test('empty check', t => {
 });
 
 test('head node value', t => {
-  t.is(linear.head, undefined);
+  t.is(linear.head, null);
 });
 
 test('last node value', t => {
-  t.is(linear.last, undefined);
+  t.is(linear.last, null);
 });
 
 test('head & last values equal', t => {
@@ -21,19 +21,15 @@ test('head & last values equal', t => {
 });
 
 test('get node value', t => {
-  t.is(linear.get(0), undefined);
-});
-
-test('next node', t => {
-  t.throws(() => linear.node(0).next, 'Cannot read property \'next\' of undefined');
+  t.throws(() => linear.get(0), 'List index out of bounds');
 });
 
 test('select node', t => {
-  t.is(linear.node(0), undefined);
+  t.throws(() => linear.node(0), 'List index out of bounds');
 });
 
 test('remove node', t => {
-  t.is(linear.remove(0), undefined);
+  t.throws(() => linear.remove(0), 'List index out of bounds');
 });
 
 test('set node value', t => {
@@ -68,6 +64,7 @@ test('clear', t => {
 });
 
 test('iterate', t => {
-  const iterated = linear.forEach(x => x);
-  t.is(iterated, undefined);
+  const arr = [];
+  linear.forEach(x => x);
+  t.deepEqual(arr, []);
 });
