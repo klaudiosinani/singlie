@@ -1,16 +1,15 @@
-'use strict';
 import { Circular } from './../../.';
 
-const circular = new Circular();
+const circular = new Circular<string>();
 
 // Append a node holding the value `E`
 circular.append('E');
-circular.head; // => E
-circular.last; // => E
+circular.head; // => Node { next: [Circular], value: 'E' }
+circular.last; // => Node { next: [Circular], value: 'E' }
 circular.get(0); // => E
 
 // Return the node corresponding to the index
-circular.node(0); // => Node { value: 'E', next: [Circular] }
+circular.node(0); //=> Node { next: [Circular], value: 'E' }
 circular.node(0).value; // => E
 circular.node(0).next.value; // => E
 circular.node(0).next.next.value; // => E
@@ -54,4 +53,4 @@ circular
 // => [G]->[F]->[E]->[D]->[C]->[B]->[A]
 
 // Clear the list
-circular.clear(); // => Circular { head: null, length: 0 }
+circular.clear(); // => Circular { head: null, last: null, length: 0 }
