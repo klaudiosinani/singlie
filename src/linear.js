@@ -61,7 +61,13 @@ class Linear extends List {
   }
 
   prepend(...values) {
-    values.forEach(value => this._addHead(value));
+    values.forEach(value => {
+      if (this.isEmpty()) {
+        return this._initializeList(value);
+      }
+
+      return this._addHead(value);
+    });
     return this;
   }
 
