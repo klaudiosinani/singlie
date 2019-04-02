@@ -29,6 +29,7 @@ class List {
 
   clear() {
     this._head = null;
+    this._last = null;
     this._length = 0;
     return this;
   }
