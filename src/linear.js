@@ -83,9 +83,17 @@ class Linear extends List {
     return this;
   }
 
-  insert({value, index = this.length}) {
-    this._arrayify(value).forEach(value => {
-      return (index <= 0) ? this._addHead(value) : this._addNode(value, index);
+  insert({value, index}) {
+    this._arrayify(value).forEach(x => {
+      if (index === 0) {
+        return this.prepend(x);
+      }
+
+      if (index === this.length) {
+        return this.append(x);
+      }
+
+      return this._addNode(x, index);
     });
     return this;
   }
