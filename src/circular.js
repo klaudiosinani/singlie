@@ -97,7 +97,7 @@ class Circular extends List {
       }
 
       if (index === this.length) {
-        return this._addLast(x);
+        return this.append(x);
       }
 
       return this._addNode(x, index);
