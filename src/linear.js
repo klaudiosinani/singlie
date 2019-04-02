@@ -34,17 +34,29 @@ class Linear extends List {
   }
 
   _removeHead() {
-    const {_head} = this;
-    this._head = _head.next;
-    _head.next = null;
+    const {next} = this._head;
+
+    if (!next) {
+      return this.clear();
+    }
+
+    this._head = next;
+    this._length--;
+    return this;
+  }
+
+  _removeLast() {
+    const prev = this.node(this.length - 2);
+    prev.next = null;
+    this._last = prev;
     this._length--;
     return this;
   }
 
   _removeNode(index) {
-    const node = this._getNode(index);
-    this._getNode(index - 1).next = node.next;
-    node.next = null;
+    const prev = this.node(index - 1);
+    const {next: node} = prev;
+    prev.next = node.next;
     this._length--;
     return this;
   }
@@ -142,12 +154,20 @@ class Linear extends List {
     return result;
   }
 
-  remove(index = this.length - 1) {
+  remove(index) {
     if (!this._isValid(index)) {
-      return undefined;
+      throw new RangeError('List index out of bounds');
     }
 
-    return (index === 0) ? this._removeHead() : this._removeNode(index);
+    if (index === 0) {
+      return this._removeHead();
+    }
+
+    if (index === this.length - 1) {
+      return this._removeLast();
+    }
+
+    return this._removeNode(index);
   }
 
   reverse() {
