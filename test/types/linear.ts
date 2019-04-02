@@ -1,15 +1,15 @@
 import { Linear } from './../../.';
 
-const linear = new Linear();
+const linear = new Linear<string>();
 
 // Append a node holding the value `E`
 linear.append('E');
-linear.head; // => E
-linear.last; // => E
+linear.head; // => Node { next: null, value: 'E' }
+linear.last; // => Node { next: null, value: 'E' }
 linear.get(0); // => E
 
 // Return the node corresponding to the index
-linear.node(0); // => Node { value: 'E', next: null }
+linear.node(0); // => Node { next: null, value: 'E' }
 linear.node(0).value; // => E
 linear.node(0).next; // => null
 
@@ -51,4 +51,4 @@ linear
 // => [G]->[F]->[E]->[D]->[C]->[B]->[A]
 
 // Clear the list
-linear.clear(); // => Linear { head: null, length: 0 }
+linear.clear(); // => Linear { head: null, last: null, length: 0 }
