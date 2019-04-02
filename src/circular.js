@@ -38,18 +38,30 @@ class Circular extends List {
   }
 
   _removeHead() {
-    const {_head} = this;
-    this._last.next = _head.next;
-    this._head = this._last.next;
-    _head.next = null;
+    const {next: node} = this._head;
+
+    if (node === this._head) {
+      return this.clear();
+    }
+
+    this._last.next = node;
+    this._head = node;
+    this._length--;
+    return this;
+  }
+
+  _removeLast() {
+    const prev = this.node(this.length - 2);
+    prev.next = this._head;
+    this._last = prev;
     this._length--;
     return this;
   }
 
   _removeNode(index) {
-    const node = this._getNode(index);
-    this._getNode(index - 1).next = node.next;
-    node.next = null;
+    const prev = this.node(index - 1);
+    const {next: node} = prev;
+    prev.next = node.next;
     this._length--;
     return this;
   }
@@ -151,13 +163,17 @@ class Circular extends List {
     return result;
   }
 
-  remove(index = this.length - 1) {
+  remove(index) {
     if (!this._isValid(index)) {
-      return undefined;
+      throw new RangeError('List index out of bounds');
     }
 
     if (index === 0) {
-      return (this.length === 1) ? this.clear() : this._removeHead();
+      return this._removeHead();
+    }
+
+    if (index === this.length - 1) {
+      return this._removeLast();
     }
 
     return this._removeNode(index);
