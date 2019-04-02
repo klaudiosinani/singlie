@@ -1,50 +1,81 @@
 declare namespace node {
   export interface Constructor {
-    new (value?: any): Instance;
+    new <T = any>(value?: T): Instance<T>;
   }
 
-  export interface Instance {
-    value: any;
-    next: Instance | null;
+  export interface Instance<T = any> {
+    value: T;
+    next: Instance<T> | null;
   }
 }
 
-declare namespace circular {
-  export interface Constructor {
-    new (): Instance;
-  }
+declare namespace list {
+  type Reducer<U, T> = (previousValue: U, currentValue: T) => U;
 
-  export interface Instance {
-    readonly head: any;
-    readonly last: any;
+  export interface Instance<T> {
     readonly length: number;
-    append(...values: any): this;
+    append(...values: T[]): this;
     clear(): this;
-    forEach(fn: (value: any) => any): void;
-    get(index: number): any;
-    insert(opts: { value: any | any[]; index: number }): this;
+    forEach(fn: (value: T) => any): this;
+    get(index: number): T;
+    insert(opts: { value: T | T[]; index: number }): this;
     isEmpty(): boolean;
-    join(separator: string): string;
-    map(fn: (value: any) => any): this;
-    node(index: number): node.Instance;
-    prepend(...values: any): this;
+    join(separator?: string): string;
+    node(index: number): node.Instance<T>;
+    prepend(...values: T[]): this;
     remove(index: number): this;
     reverse(): this;
-    set(opts: { value: any; index: number }): this;
-    toArray(): any[];
+    set(opts: { value: T; index: number }): this;
+    toArray(): T[];
   }
 }
 
 declare namespace linear {
-  export interface Constructor {
-    new (): Instance;
+  interface LastNode<T> extends node.Instance<T> {
+    next: null;
   }
 
-  interface Instance extends circular.Instance {}
+  interface HeadNode<T> extends node.Instance<T> {
+    prev: null;
+  }
+
+  export interface Constructor {
+    new <T = any>(): Instance<T>;
+  }
+
+  interface Instance<T = any> extends list.Instance<T> {
+    readonly head: HeadNode<T> | null;
+    readonly last: LastNode<T> | null;
+    map<U>(fn: (value: T) => U): Instance<U>;
+    toCircular(): circular.Instance<T>;
+  }
+}
+
+declare namespace circular {
+  interface LastNode<T> extends node.Instance<T> {
+    next: node.Instance<T>;
+    prev: node.Instance<T>;
+  }
+
+  interface HeadNode<T> extends node.Instance<T> {
+    next: node.Instance<T>;
+    prev: node.Instance<T>;
+  }
+
+  export interface Constructor {
+    new <T = any>(): Instance<T>;
+  }
+
+  interface Instance<T = any> extends list.Instance<T> {
+    readonly head: HeadNode<T> | null;
+    readonly last: LastNode<T> | null;
+    map<U>(fn: (value: T) => U): Instance<U>;
+    toLinear(): linear.Instance<T>;
+  }
 }
 
 declare namespace singlie {
-  export interface Node extends node.Instance {}
+  export interface Node<T = any> extends node.Instance<T> {}
 }
 
 declare const singlie: {
