@@ -94,12 +94,11 @@ Linear singly linked lists can contain multiple nodes, where each node has only 
 const {Linear} = require('singlie');
 
 const linear = new Linear();
-const {log} = console;
 
 // Append a node holding the value `E`
 linear.append('E');
-linear.head; // => E
-linear.last; // => E
+linear.head; // => Node { value: 'E', next: null }
+linear.last; // => Node { value: 'E', next: null }
 linear.get(0); // => E
 
 // Return the node corresponding to the index
@@ -158,8 +157,8 @@ const {log} = console;
 
 // Append a node holding the value `E`
 circular.append('E');
-circular.head; // => E
-circular.last; // => E
+circular.head; // => Node { value: 'E', next: [Circular] }
+circular.last; // => Node { value: 'E', next: [Circular] }
 circular.get(0); // => E
 
 // Return the node corresponding to the index
@@ -250,26 +249,26 @@ list.prepend('B', 'A');
 
 #### list.`head`
 
-- Return Type: `any`
+- Return Type: `Node | null`
 
-Returns the value of the first node / head on the list.
+Returns the first node / head on the list.
 
 ```js
 list.append('A', 'B');
 list.head;
-// => A
+// => Node { value: 'A', next: [Node] }
 ```
 
 #### list.`last`
 
-- Return Type: `any`
+- Return Type: `Node | null`
 
-Returns the value of the last node on the list.
+Returns the last node on the list.
 
 ```js
 list.append('A', 'B');
 list.last;
-// => B
+// => Node { value: 'B', next: [Node] }
 ```
 
 #### list.`length`
@@ -402,7 +401,7 @@ const array = list.toArray();
 
 #### list.`clear()`
 
-- Return Type: `Empty Linked List`
+- Return Type: `Linked List`
 
 Removes all nodes from the list.
 
@@ -441,7 +440,7 @@ list.join(' ');
 
 #### list.`forEach(function)`
 
-- Return Type: `undefined`
+- Return Type: `Linked List`
 
 Executes a provided function once for each node value.
 
