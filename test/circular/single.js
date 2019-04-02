@@ -6,11 +6,11 @@ const circular = new Circular();
 
 test('append', t => {
   circular.append('A');
-  t.is(circular.head, 'A');
+  t.is(circular.head.value, 'A');
 });
 
 test('head & last values equal', t => {
-  t.is(circular.head, circular.last);
+  t.is(circular.head.value, circular.last.value);
 });
 
 test('empty check', t => {
@@ -37,12 +37,12 @@ test('incremented length', t => {
 
 test('set node value', t => {
   circular.set({index: 0, value: 'B'});
-  t.is(circular.head, 'B');
+  t.is(circular.head.value, 'B');
 });
 
 test('update node value', t => {
   circular.node(0).value = 'A';
-  t.is(circular.head, 'A');
+  t.is(circular.head.value, 'A');
 });
 
 test('arrayify', t => {
@@ -55,23 +55,23 @@ test('join', t => {
 
 test('reverse', t => {
   const reversed = circular.reverse();
-  t.is(reversed.head, 'A');
+  t.is(reversed.head.value, 'A');
 });
 
 test('map', t => {
   const mapped = circular.map(x => x);
-  t.is(circular.head, mapped.head);
+  t.is(circular.head.value, mapped.head.value);
 });
 
 test('iterate', t => {
   const array = [];
   circular.forEach(x => array.push(x));
-  t.is(circular.head, array[0]);
+  t.is(circular.head.value, array[0]);
 });
 
 test('remove node', t => {
   circular.remove(0);
-  t.is(circular.head, undefined);
+  t.is(circular.head, null);
 });
 
 test('decremented length', t => {
@@ -80,7 +80,7 @@ test('decremented length', t => {
 
 test('prepend', t => {
   circular.prepend('A');
-  t.is(circular.head, 'A');
+  t.is(circular.head.value, 'A');
 });
 
 test('clear', t => {
@@ -89,6 +89,6 @@ test('clear', t => {
 });
 
 test('insert', t => {
-  circular.insert({value: 'A'});
-  t.is(circular.head, 'A');
+  circular.insert({value: 'A', index: 0});
+  t.is(circular.head.value, 'A');
 });
