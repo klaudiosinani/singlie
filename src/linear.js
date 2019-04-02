@@ -5,19 +5,32 @@ const Node = require('./node');
 class Linear extends List {
   _addHead(value) {
     const {_head} = this;
-    this._head = new Node(value);
-    this._head.next = _head;
+    const node = new Node(value);
+    node.next = _head;
+    this._head = node;
     this._length++;
-    return this;
   }
 
-  _addNode(value, index = this.length) {
+  _addLast(value) {
     const node = new Node(value);
-    const prev = this._getNode(index - 1);
+    this._last.next = node;
+    this._last = node;
+    this._length++;
+  }
+
+  _addNode(value, index) {
+    const node = new Node(value);
+    const prev = this.node(index - 1);
     node.next = prev.next;
     prev.next = node;
     this._length++;
-    return this;
+  }
+
+  _initializeList(value) {
+    const node = new Node(value);
+    this._head = node;
+    this._last = node;
+    this._length++;
   }
 
   _removeHead() {
@@ -71,7 +84,11 @@ class Linear extends List {
 
   append(...values) {
     values.forEach(value => {
-      return this.isEmpty() ? this._addHead(value) : this._addNode(value);
+      if (this.isEmpty()) {
+        return this._initializeList(value);
+      }
+
+      return this._addLast(value);
     });
     return this;
   }
