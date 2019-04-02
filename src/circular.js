@@ -6,20 +6,35 @@ class Circular extends List {
   _addHead(value) {
     const {_head} = this;
     const node = new Node(value);
+    node.next = _head;
+    this._last.next = node;
     this._head = node;
-    this._head.next = this.length === 0 ? node : _head;
     this._length++;
-    this._last.next = this._head;
-    return this;
   }
 
-  _addNode(value, index = this.length) {
+  _addLast(value) {
+    const {_head} = this;
+    const node = new Node(value);
+    node.next = _head;
+    this._last.next = node;
+    this._last = node;
+    this._length++;
+  }
+
+  _addNode(value, index) {
     const node = new Node(value);
     const prev = this.node(index - 1);
     node.next = prev.next;
     prev.next = node;
     this._length++;
-    return this;
+  }
+
+  _initializeList(value) {
+    const node = new Node(value);
+    node.next = node;
+    this._head = node;
+    this._last = node;
+    this._length++;
   }
 
   _removeHead() {
@@ -50,6 +65,17 @@ class Circular extends List {
     return node.next === this._head ? this : this._map(fn, node.next);
   }
 
+  append(...values) {
+    values.forEach(value => {
+      if (this.isEmpty()) {
+        return this._initializeList(value);
+      }
+
+      return this._addLast(value);
+    });
+    return this;
+  }
+
   prepend(...values) {
     values.forEach(value => this._addHead(value));
     return this;
@@ -68,13 +94,6 @@ class Circular extends List {
   insert({value, index = this.length}) {
     this._arrayify(value).forEach(value => {
       return (index <= 0) ? this._addHead(value) : this._addNode(value, index);
-    });
-    return this;
-  }
-
-  append(...values) {
-    values.forEach(value => {
-      return this.isEmpty() ? this._addHead(value) : this._addNode(value);
     });
     return this;
   }
