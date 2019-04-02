@@ -54,17 +54,6 @@ class Circular extends List {
     return this;
   }
 
-  _swap(x, index, swaps) {
-    const y = this._getNode(index - 1);
-    [x.value, y.value] = [y.value, x.value];
-    return swaps > 0 ? this._swap(x.next, index - 1, swaps - 1) : this;
-  }
-
-  _map(fn, node = this._head) {
-    node.value = fn(node.value);
-    return node.next === this._head ? this : this._map(fn, node.next);
-  }
-
   append(...values) {
     values.forEach(value => {
       if (this.isEmpty()) {
