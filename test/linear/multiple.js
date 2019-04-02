@@ -6,12 +6,12 @@ const linear = new Linear();
 
 test('multiple append', t => {
   linear.append('A', 'B');
-  t.is(linear.head, 'A');
-  t.is(linear.last, 'B');
+  t.is(linear.head.value, 'A');
+  t.is(linear.last.value, 'B');
 });
 
 test('head & last values not equal', t => {
-  t.not(linear.head, linear.last);
+  t.not(linear.head.value, linear.last.value);
 });
 
 test('empty check', t => {
@@ -24,8 +24,7 @@ test('get nodes value', t => {
 });
 
 test('select node', t => {
-  const node = new Node();
-  node.value = 'B';
+  const node = new Node('B');
   t.deepEqual(linear.node(1), node);
 });
 
@@ -40,12 +39,12 @@ test('incremented length', t => {
 
 test('set node value', t => {
   linear.set({index: 0, value: 'C'});
-  t.is(linear.head, 'C');
+  t.is(linear.head.value, 'C');
 });
 
 test('update node value', t => {
   linear.node(0).value = 'A';
-  t.is(linear.head, 'A');
+  t.is(linear.head.value, 'A');
 });
 
 test('arrayify', t => {
@@ -62,24 +61,24 @@ test('join with space', t => {
 
 test('reverse', t => {
   const reversed = linear.reverse();
-  t.is(reversed.head, 'B');
+  t.is(reversed.head.value, 'B');
 });
 
 test('map', t => {
   const mapped = linear.map(x => x);
-  t.is(linear.head, mapped.head);
+  t.is(linear.head.value, mapped.head.value);
 });
 
 test('iterate', t => {
   const array = [];
   linear.forEach(x => array.push(x));
-  t.is(linear.head, array[0]);
-  t.is(linear.last, array[1]);
+  t.is(linear.head.value, array[0]);
+  t.is(linear.last.value, array[1]);
 });
 
 test('remove node', t => {
-  linear.remove();
-  t.is(linear.head, 'B');
+  linear.remove(0);
+  t.is(linear.head.value, 'B');
 });
 
 test('decremented length', t => {
@@ -93,8 +92,8 @@ test('clear', t => {
 
 test('prepend', t => {
   linear.prepend('A', 'B');
-  t.is(linear.head, 'B');
-  t.is(linear.last, 'A');
+  t.is(linear.head.value, 'B');
+  t.is(linear.last.value, 'A');
 });
 
 test('insert head', t => {

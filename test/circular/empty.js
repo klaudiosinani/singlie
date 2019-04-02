@@ -9,11 +9,11 @@ test('empty check', t => {
 });
 
 test('head node value', t => {
-  t.is(circular.head, undefined);
+  t.is(circular.head, null);
 });
 
 test('last node value', t => {
-  t.is(circular.last, undefined);
+  t.is(circular.last, null);
 });
 
 test('head & last values equal', t => {
@@ -21,19 +21,19 @@ test('head & last values equal', t => {
 });
 
 test('get node value', t => {
-  t.is(circular.get(0), undefined);
+  t.throws(() => circular.get(0), 'List index out of bounds');
 });
 
 test('next node', t => {
-  t.throws(() => circular.node(0).next, 'Cannot read property \'next\' of undefined');
+  t.throws(() => circular.node(0).next, 'List index out of bounds');
 });
 
 test('select node', t => {
-  t.is(circular.node(0), undefined);
+  t.throws(() => circular.node(0), 'List index out of bounds');
 });
 
 test('remove node', t => {
-  t.is(circular.remove(0), undefined);
+  t.throws(() => circular.remove(0), 'List index out of bounds');
 });
 
 test('set node value', t => {
@@ -68,6 +68,7 @@ test('clear', t => {
 });
 
 test('iterate', t => {
-  const iterated = circular.forEach(x => x);
-  t.is(iterated, undefined);
+  const arr = [];
+  circular.forEach(x => arr.push(x));
+  t.deepEqual(arr, []);
 });
