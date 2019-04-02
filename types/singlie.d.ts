@@ -16,17 +16,22 @@ declare namespace list {
     readonly length: number;
     append(...values: T[]): this;
     clear(): this;
+    filter(fn: (value: T) => boolean): this;
     forEach(fn: (value: T) => any): this;
     get(index: number): T;
     insert(opts: { value: T | T[]; index: number }): this;
+    isCircular(): boolean;
     isEmpty(): boolean;
+    isLinear(): boolean;
     join(separator?: string): string;
     node(index: number): node.Instance<T>;
     prepend(...values: T[]): this;
+    reduce<U>(fn: Reducer<U, T>, initialValue: U): U;
     remove(index: number): this;
     reverse(): this;
     set(opts: { value: T; index: number }): this;
     toArray(): T[];
+    toString(): string;
   }
 }
 
@@ -75,6 +80,8 @@ declare namespace circular {
 }
 
 declare namespace singlie {
+  export interface Circular<T = any> extends circular.Instance<T> {}
+  export interface Linear<T = any> extends linear.Instance<T> {}
   export interface Node<T = any> extends node.Instance<T> {}
 }
 
