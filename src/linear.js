@@ -49,6 +49,70 @@ class Linear extends List {
     return this;
   }
 
+  append(...values) {
+    values.forEach(value => {
+      if (this.isEmpty()) {
+        return this._initializeList(value);
+      }
+
+      return this._addLast(value);
+    });
+    return this;
+  }
+
+  filter(fn) {
+    const list = new Linear();
+
+    this.forEach(x => {
+      if (fn(x)) {
+        list.append(x);
+      }
+    });
+
+    return list;
+  }
+
+  forEach(fn) {
+    let {_head: node} = this;
+
+    while (node) {
+      fn(node.value);
+      node = node.next;
+    }
+
+    return this;
+  }
+
+  insert({value, index = this.length}) {
+    this._arrayify(value).forEach(value => {
+      return (index <= 0) ? this._addHead(value) : this._addNode(value, index);
+    });
+    return this;
+  }
+
+  join(separator = ',') {
+    let result = '';
+    let {_head: node} = this;
+
+    while (node) {
+      result += node.value;
+
+      if (node.next) {
+        result += separator;
+      }
+
+      node = node.next;
+    }
+
+    return result;
+  }
+
+  map(fn) {
+    const list = new Linear();
+    this.forEach(x => list.append(fn(x)));
+    return list;
+  }
+
   prepend(...values) {
     values.forEach(value => {
       if (this.isEmpty()) {
@@ -70,24 +134,6 @@ class Linear extends List {
     return result;
   }
 
-  insert({value, index = this.length}) {
-    this._arrayify(value).forEach(value => {
-      return (index <= 0) ? this._addHead(value) : this._addNode(value, index);
-    });
-    return this;
-  }
-
-  append(...values) {
-    values.forEach(value => {
-      if (this.isEmpty()) {
-        return this._initializeList(value);
-      }
-
-      return this._addLast(value);
-    });
-    return this;
-  }
-
   remove(index = this.length - 1) {
     if (!this._isValid(index)) {
       return undefined;
@@ -96,15 +142,10 @@ class Linear extends List {
     return (index === 0) ? this._removeHead() : this._removeNode(index);
   }
 
-  forEach(fn) {
-    let {_head: node} = this;
-
-    while (node) {
-      fn(node.value);
-      node = node.next;
-    }
-
-    return this;
+  reverse() {
+    const list = new Linear();
+    this.forEach(x => list.prepend(x));
+    return list;
   }
 
   toArray() {
@@ -117,35 +158,6 @@ class Linear extends List {
     const Circular = require('./circular');
     const list = new Circular();
     this.forEach(x => list.append(x));
-    return list;
-  }
-
-  map(fn) {
-    const list = new Linear();
-    this.forEach(x => list.append(fn(x)));
-    return list;
-  }
-
-  join(separator = ',') {
-    let result = '';
-    let {_head: node} = this;
-
-    while (node) {
-      result += node.value;
-
-      if (node.next) {
-        result += separator;
-      }
-
-      node = node.next;
-    }
-
-    return result;
-  }
-
-  reverse() {
-    const list = new Linear();
-    this.forEach(x => list.prepend(x));
     return list;
   }
 }
