@@ -168,12 +168,9 @@ class Circular extends List {
   }
 
   reverse() {
-    if (this.isEmpty()) {
-      return this;
-    }
-
-    const swaps = Math.floor(this.length / 2) - 1;
-    return this._swap(this._head, this.length, swaps);
+    const list = new Circular();
+    this.forEach(x => list.prepend(x));
+    return list;
   }
 }
 
