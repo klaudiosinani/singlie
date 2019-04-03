@@ -1,6 +1,6 @@
 'use strict';
 const test = require('ava');
-const {Linear} = require('../../.');
+const {Circular, Linear} = require('../../.');
 
 const linear = new Linear();
 
@@ -67,4 +67,29 @@ test('iterate', t => {
   const arr = [];
   linear.forEach(x => x);
   t.deepEqual(arr, []);
+});
+
+test('reduce', t => {
+  t.is(linear.reduce((x, y) => x + y, 0), 0);
+});
+
+test('filter', t => {
+  t.deepEqual(linear.filter(x => x % 2 === 0), linear);
+});
+
+test('toString', t => {
+  t.is(linear.toString(), '');
+});
+
+test('toCircular', t => {
+  const circular = new Circular();
+  t.deepEqual(linear.toCircular(), circular);
+});
+
+test('isLinear', t => {
+  t.is(linear.isLinear(), true);
+});
+
+test('isCircular', t => {
+  t.is(linear.isCircular(), false);
 });

@@ -1,6 +1,6 @@
 'use strict';
 const test = require('ava');
-const {Circular, Node} = require('../../.');
+const {Circular, Linear, Node} = require('../../.');
 
 const circular = new Circular();
 
@@ -87,15 +87,19 @@ test('iterate', t => {
 });
 
 test('remove node', t => {
-  circular.clear().append('A', 'B', 'C');
-  circular.remove(0).remove(0);
-  t.is(circular.head.value, 'C');
-  t.is(circular.node(0).value, 'C');
+  circular.clear().append('A', 'B', 'C', 'D', 'E');
+  circular.remove(0);
+  t.is(circular.head.value, 'B');
+  t.is(circular.node(0).value, 'B');
   t.is(circular.node(0).next.value, 'C');
+  circular.remove(1);
+  t.is(circular.head.next.value, 'D');
+  circular.remove(circular.length - 1);
+  t.is(circular.last.value, 'D');
 });
 
 test('decremented length', t => {
-  t.is(circular.length, 1);
+  t.is(circular.length, 2);
 });
 
 test('clear', t => {
@@ -137,6 +141,39 @@ test('insert last', t => {
   t.is(circular.get(2), 'D');
   t.is(circular.get(3), 'C');
   t.is(circular.node(circular.length - 1).next.value, 'B');
+});
+
+test('toString', t => {
+  circular.clear().prepend('A', 'B', 'C', 'D');
+  t.is(circular.toString(), 'D,C,B,A');
+});
+
+test('reduce', t => {
+  circular.clear().append(5, 10, 15, 20, 25);
+  t.is(circular.reduce((x, y) => x + y, 0), 75);
+  t.is(circular.reduce((x, y) => x > y ? x : y, -Infinity), 25);
+});
+
+test('filter', t => {
+  circular.clear().append(1, 2, 3, 4, 5, 6, 7);
+  const oddList = new Circular();
+  oddList.append(1, 3, 5, 7);
+  t.deepEqual(circular.filter(x => x % 2 > 0), oddList);
+});
+
+test('toLinear', t => {
+  circular.clear().append('A', 'B', 'C');
+  const linear = new Linear();
+  linear.append('A', 'B', 'C');
+  t.deepEqual(circular.toLinear(), linear);
+});
+
+test('isLinear', t => {
+  t.is(circular.isLinear(), false);
+});
+
+test('isCircular', t => {
+  t.is(circular.isCircular(), true);
 });
 
 test('chain', t => {
