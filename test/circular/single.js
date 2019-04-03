@@ -1,6 +1,6 @@
 'use strict';
 const test = require('ava');
-const {Circular, Node} = require('../../.');
+const {Circular, Linear, Node} = require('../../.');
 
 const circular = new Circular();
 
@@ -91,4 +91,30 @@ test('clear', t => {
 test('insert', t => {
   circular.insert({value: 'A', index: 0});
   t.is(circular.head.value, 'A');
+});
+
+test('reduce', t => {
+  t.is(circular.reduce((x, y) => x + y, ''), 'A');
+});
+
+test('filter', t => {
+  t.deepEqual(circular.filter(x => x.startsWith('A')), circular);
+});
+
+test('toString', t => {
+  t.is(circular.toString(), 'A');
+});
+
+test('toLinear', t => {
+  const linear = new Linear();
+  linear.append('A');
+  t.deepEqual(circular.toLinear(), linear);
+});
+
+test('isLinear', t => {
+  t.is(circular.isLinear(), false);
+});
+
+test('isCircular', t => {
+  t.is(circular.isCircular(), true);
 });
