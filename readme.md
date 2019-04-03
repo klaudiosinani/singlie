@@ -479,6 +479,116 @@ array.join(' ');
 // => '[A] [B] [C]'
 ```
 
+#### list.`filter(function)`
+
+- Return Type: `Linked List`
+
+Creates a new liked list with all elements that pass the test implemented by the provided function.
+
+##### **`function`**
+
+- Type: `Function`
+
+Function is a predicate, to test each element of the list. Return true to keep the element, false otherwise.
+
+```js
+list.append(1, 2, 3, 4, 5, 6);
+// => { value: 1, next: { value: 2, next: [List] } }
+const filtered = list.filter(x => x % 2 > 0);
+filtered.toArray();
+// => [ 1, 3, 5 ]
+```
+
+#### list.`reduce(function, initialValue)`
+
+- Return Type: `Any`
+
+Executes a reducer function on each member of the list resulting in a single output value.
+
+##### **`function`**
+
+- Type: `Function`
+
+The reducer function takes two arguments: accumulator & current value. The reducer function's returned value is assigned to the accumulator, whose value is remembered across each iteration throughout the list and ultimately becomes the final, single resulting value.
+
+```js
+list.append(20, 50, 35, 41, 5, 67);
+// => { value: 1, next: { value: 2, next: [List] } }
+list.reduce((acc, x) => acc > x ? acc : x, -Infinity);
+// => 67
+```
+
+#### list.`toString()`
+
+- Return Type: `String`
+
+Returns a string representing the specified list and its elements.
+
+```js
+list.append(20, 50, 35, 41, 5, 67);
+// => '20,50,35,41,5,67'
+```
+
+#### list.`isCircular()`
+
+- Return Type: `Boolean`
+
+Returns `true` if the linked list is circular or `false` if it is linear.
+
+```js
+const {Circular} = require('singlie');
+
+const list = new Circular();
+
+list.isCircular();
+// => true
+```
+
+#### list.`isLinear()`
+
+- Return Type: `Boolean`
+
+Returns `true` if the linked list is linear or `false` if it is circular.
+
+```js
+const {Circular} = require('singlie');
+
+const list = new Circular();
+
+list.isLinear();
+// => false
+```
+
+#### linear.`toCircular()`
+
+- Return Type: `Circular Linked List`
+
+Returns a new circular linked list containing all elements of the original linear linked list.
+
+```js
+const {Linear} = require('singlie');
+
+const list = new Linear();
+
+list.toCircular().isLinear();
+// => false
+```
+
+#### circular.`toLinear()`
+
+- Return Type: `Linear Linked List`
+
+Returns a new linear linked list containing all elements of the original circular linked list.
+
+```js
+const {Circular} = require('singlie');
+
+const list = new Circular();
+
+list.toLinear().isLinear();
+// => true
+```
+
 Also available, along with the `Circular` and `Linear` exposed classes, is the `Node` class, mainly useful for testing purposes, since it can be utilized to compare nodes residing in linear & circular linked lists. The class has a unary constructor method, with a `'value'` parameter, corresponding to the data stored in the created instance. 
 
 Additionally, each `Node` instance has the following two public properties: 
