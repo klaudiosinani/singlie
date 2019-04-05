@@ -31,6 +31,7 @@ Visit the [contributing guidelines](https://github.com/klaussinani/singlie/blob/
 - [In Depth](#in-depth)
 - [API](#api)
 - [Development](#development)
+- [Related](#related)
 - [Team](#team)
 - [License](#license)
 
@@ -637,6 +638,10 @@ For more info on how to contribute to the project, please read the [contributing
 - Navigate to your local fork: `cd singlie`
 - Install the project dependencies: `npm install` or `yarn install`
 - Lint the code and run the tests: `npm test` or `yarn test`
+
+## Related
+
+- [doublie](https://github.com/klaussinani/doublie) - Doubly circular & linear linked lists for ES6
 
 ## Team
 
