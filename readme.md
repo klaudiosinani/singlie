@@ -510,7 +510,7 @@ The reducer function takes two arguments: accumulator & current value. The reduc
 
 ```js
 list.append(20, 50, 35, 41, 5, 67);
-// => { value: 1, next: { value: 2, next: [List] } }
+// => { value: 20, next: { value: 50, next: [List] } }
 list.reduce((acc, x) => acc > x ? acc : x, -Infinity);
 // => 67
 ```
