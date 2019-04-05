@@ -102,6 +102,22 @@ class Circular extends List {
     return this;
   }
 
+  includes(value) {
+    let {_head: node} = this;
+
+    if (node) {
+      do {
+        if (node.value === value) {
+          return true;
+        }
+
+        node = node.next;
+      } while (node !== this._head);
+    }
+
+    return false;
+  }
+
   insert({value, index}) {
     this._arrayify(value).forEach(x => {
       if (index === 0) {

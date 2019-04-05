@@ -117,3 +117,10 @@ test('isLinear', t => {
 test('isCircular', t => {
   t.is(linear.isCircular(), false);
 });
+
+test('includes', t => {
+  linear.clear().append(5);
+  t.is(linear.includes(), false);
+  t.is(linear.includes(0), false);
+  t.is(linear.includes(5), true);
+});
