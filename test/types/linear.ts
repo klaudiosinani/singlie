@@ -52,3 +52,7 @@ linear
 
 // Clear the list
 linear.clear(); // => Linear { head: null, last: null, length: 0 }
+
+linear.append('R', 'O', 'G');
+linear.includes('G'); //=> true
+linear.includes('D'); //=> false

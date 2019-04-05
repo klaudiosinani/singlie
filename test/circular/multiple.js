@@ -182,3 +182,10 @@ test('chain', t => {
   t.is(result.join(' '), '[D] [C] [B] [A]');
   t.is(result.node(result.length - 1).next.value, result.head.value);
 });
+
+test('includes', t => {
+  circular.clear().append(5, 10, 15, 20, 25, 30);
+  t.is(circular.includes(), false);
+  t.is(circular.includes(0), false);
+  t.is(circular.includes(25), true);
+});

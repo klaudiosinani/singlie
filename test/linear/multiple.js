@@ -168,3 +168,10 @@ test('chain', t => {
   t.deepEqual(result.toArray(), ['[D]', '[C]', '[B]', '[A]']);
   t.is(result.join(' '), '[D] [C] [B] [A]');
 });
+
+test('includes', t => {
+  linear.clear().append(5, 10, 15, 20, 25, 30);
+  t.is(linear.includes(), false);
+  t.is(linear.includes(0), false);
+  t.is(linear.includes(25), true);
+});
