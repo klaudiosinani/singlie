@@ -59,22 +59,22 @@ const {Circular, Linear} = require('singlie');
 
 const linear = new Linear();
 linear.prepend('A').append('B');
-linear.node(0);
+linear.head;
 // => Node { value: 'A', next: Node { value: 'B', next: null } }
-linear.node(0).next;
+linear.head.next;
 // => Node { value: 'B', next: null }
-linear.node(0).next.next;
+linear.head.next.next;
 // => null
 linear.map(x => `[${x}]`).reverse().join(' -> ');
 // => [B] -> [A]
 
 const circular = new Circular();
 circular.append('B').prepend('A');
-circular.node(0);
+circular.head;
 // => Node { value: 'A', next: Node { value: 'B', next: [Circular] } }
-circular.node(0).next;
+circular.head.next;
 // => Node { value: 'B', next: Node { value: 'A', next: [Circular] } }
-circular.node(0).next.next;
+circular.head.next.next;
 // => Node { value: 'A', next: Node { value: 'B', next: [Circular] } }
 circular.map(x => `[${x}]`).reverse().toArray();
 // => [ '[B]', '[A]' ]
