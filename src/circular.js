@@ -118,6 +118,24 @@ class Circular extends List {
     return false;
   }
 
+  indexOf(value) {
+    let counter = 0;
+    let {_head: node} = this;
+
+    if (node) {
+      do {
+        if (node.value === value) {
+          return counter;
+        }
+
+        counter++;
+        node = node.next;
+      } while (node !== this._head);
+    }
+
+    return -1;
+  }
+
   insert({value, index}) {
     this._arrayify(value).forEach(x => {
       if (index === 0) {
