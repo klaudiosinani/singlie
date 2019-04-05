@@ -19,6 +19,7 @@ declare namespace list {
     filter(fn: (value: T) => boolean): this;
     forEach(fn: (value: T) => any): this;
     get(index: number): T;
+    includes(value: T): boolean;
     insert(opts: { value: T | T[]; index: number }): this;
     isCircular(): boolean;
     isEmpty(): boolean;
