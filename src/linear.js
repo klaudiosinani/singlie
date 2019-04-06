@@ -109,6 +109,22 @@ class Linear extends List {
     return false;
   }
 
+  indexOf(value) {
+    let counter = 0;
+    let {_head: node} = this;
+
+    while (node) {
+      if (node.value === value) {
+        return counter;
+      }
+
+      counter++;
+      node = node.next;
+    }
+
+    return -1;
+  }
+
   insert({value, index}) {
     this._arrayify(value).forEach(x => {
       if (index === 0) {

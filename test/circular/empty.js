@@ -102,3 +102,8 @@ test('includes', t => {
   t.is(circular.includes(), false);
   t.is(circular.includes(1), false);
 });
+
+test('indexOf', t => {
+  t.is(circular.indexOf(), -1);
+  t.is(circular.indexOf(15), -1);
+});
