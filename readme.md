@@ -538,6 +538,29 @@ list.includes(50);
 // => true
 ```
 
+#### list.`indexOf(value)`
+
+- Return Type: `Number`
+
+The method returns the first index at which a given element can be found in the circular/linear linked list, or -1 if it is not present.
+
+##### **`value`**
+
+- Type: `Any`
+
+Element to locate in the array.
+
+```js
+list.append(20, 50, 35, 41, 5, 67);
+// => { value: 20, next: { value: 50, next: [List] } }
+list.indexOf();
+// => -1
+list.indexOf(0);
+// => -1
+list.indexOf(41);
+// => 3
+```
+
 #### list.`toString()`
 
 - Return Type: `String`
