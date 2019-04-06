@@ -17,7 +17,7 @@
 
 ## Description
 
-Progressive implementation of the circular and linear singly linked list data structures in modern ES6.
+Progressive implementation of the circular and linear singly linked list data structures in ES6 with TypeScript support.
 
 Come over to [Gitter](https://gitter.im/klaussinani/singlie) or [Twitter](https://twitter.com/klaussinani) to share your thoughts on the project.
 
