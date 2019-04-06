@@ -98,3 +98,8 @@ test('includes', t => {
   t.is(linear.includes(), false);
   t.is(linear.includes(1), false);
 });
+
+test('indexOf', t => {
+  t.is(linear.indexOf(), -1);
+  t.is(linear.indexOf(0), -1);
+});

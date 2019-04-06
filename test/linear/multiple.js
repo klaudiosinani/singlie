@@ -175,3 +175,10 @@ test('includes', t => {
   t.is(linear.includes(0), false);
   t.is(linear.includes(25), true);
 });
+
+test('indexOf', t => {
+  t.is(linear.indexOf(), -1);
+  t.is(linear.indexOf(0), -1);
+  t.is(linear.indexOf(15), 2);
+  t.is(linear.indexOf(30), 5);
+});

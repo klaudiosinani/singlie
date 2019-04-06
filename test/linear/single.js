@@ -124,3 +124,8 @@ test('includes', t => {
   t.is(linear.includes(0), false);
   t.is(linear.includes(5), true);
 });
+test('indexOf', t => {
+  t.is(linear.indexOf(), -1);
+  t.is(linear.indexOf(0), -1);
+  t.is(linear.indexOf(5), 0);
+});

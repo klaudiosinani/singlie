@@ -58,3 +58,6 @@ circular.clear(); // => Circular { head: null, last: null, length: 0 }
 circular.append('R', 'O', 'G');
 circular.includes('G'); //=> true
 circular.includes('D'); //=> false
+
+circular.indexOf('G'); //=> 2
+circular.indexOf('D'); //=> -1
