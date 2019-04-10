@@ -8,7 +8,7 @@ Please note that this project is released with a [Contributor Code of Conduct](c
 
 ### Improve documentation
 
-Typo corrections, error fixes, better explanations, more examples etc. Open an issue regarding anything that you think it could be improved! You can use the [`docs` label](https://github.com/klaussinani/singly/labels/docs) to find out what others have suggested!
+Typo corrections, error fixes, better explanations, more examples etc. Open an issue regarding anything that you think it could be improved. You can use the [`docs` label](https://github.com/klaussinani/singly/labels/docs) to find out what others have suggested.
 
 ### Improve issues
 
@@ -22,7 +22,7 @@ The [`question` label](https://github.com/klaussinani/singly/labels/question) is
 
 ### Write code
 
-You can use issue labels to discover issues you could help us out with!
+You can use issue labels to discover issues you could help us out with.
 
 - [`feature request` issues](https://github.com/klaussinani/singly/labels/feature%20request) are features we are open to including
 - [`bug` issues](https://github.com/klaussinani/singly/labels/bug) are known bugs we would like to fix
@@ -56,4 +56,4 @@ You may find an issue is assigned, or has the [`assigned` label](https://github.
 - Use a descriptive title for the pull request and commits
 - You might be asked to do changes to your pull request, you can do that by just [updating the existing one](https://github.com/RichardLitt/docs/blob/master/amending-a-commit-guide.md)
 
-> Inspired by project [AVA](https://github.com/avajs/ava/blob/master/contributing.md)'s contributing.md
+> Based on project [AVA](https://github.com/avajs/ava/blob/master/contributing.md)'s contributing.md
