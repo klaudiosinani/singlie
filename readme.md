@@ -51,7 +51,7 @@ npm install singlie
 
 ## Usage
 
-Singlie exposes a progressive and composable API, that can be utilized through a simple and minimal syntax, allowing you to combine and chain methods effectively.
+Singlie exposes a chainable API, that can be utilized through a simple and minimal syntax, allowing you to combine methods effectively.
 
 Usage examples can be also found at the [`test`](https://github.com/klaussinani/singlie/tree/master/test) directory.
 
