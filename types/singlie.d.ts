@@ -17,7 +17,7 @@ declare namespace list {
     append(...values: T[]): this;
     clear(): this;
     filter(fn: (value: T) => boolean): this;
-    forEach(fn: (value: T) => any): this;
+    forEach(fn: (value: T) => void): this;
     get(index: number): T;
     includes(value: T): boolean;
     indexOf(value: T): number;
