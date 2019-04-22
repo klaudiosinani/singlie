@@ -687,7 +687,7 @@ For more info on how to contribute to the project, please read the [contributing
 
 ## Related
 
-- [bstrie](https://github.com/klaussinani/bstrie) - Binary search trees for ES6
+- [binstree](https://github.com/klaussinani/binstree) - Binary search trees for ES6
 - [doublie](https://github.com/klaussinani/doublie) - Doubly circular & linear linked lists for ES6
 
 ## Team
