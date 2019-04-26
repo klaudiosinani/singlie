@@ -22,7 +22,8 @@
     "linked",
     "list",
     "data",
-    "structure"
+    "structure",
+    "typescript"
   ],
   "types": "types/singlie.d.ts",
   "scripts": {
