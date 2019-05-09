@@ -689,6 +689,7 @@ For more info on how to contribute to the project, please read the [contributing
 
 - [binstree](https://github.com/klaussinani/binstree) - Binary search trees for ES6
 - [doublie](https://github.com/klaussinani/doublie) - Doubly circular & linear linked lists for ES6
+- [mheap](https://github.com/klaussinani/mheap) - Binary min & max heaps for ES6
 
 ## Team
 
