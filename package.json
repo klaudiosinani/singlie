@@ -1,7 +1,7 @@
 {
   "name": "singlie",
   "version": "2.1.0",
-  "description": "⚡ Singly circular & linear linked lists for ES6",
+  "description": "Singly circular & linear linked lists for ES6",
   "license": "MIT",
   "repository": "klaussinani/singlie",
   "author": {
