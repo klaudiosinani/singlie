@@ -692,7 +692,7 @@ For more info on how to contribute to the project, please read the [contributing
 - [doublie](https://github.com/klaussinani/doublie) - Doubly circular & linear linked lists for ES6
 - [mheap](https://github.com/klaussinani/mheap) - Binary min & max heaps for ES6
 - [prioqueue](https://github.com/klaussinani/prioqueue) - Priority queues for ES6
-- [shtack](https://github.com/klaussinani/shtack) - Stacks for ES6
+- [shtack](https://github.com/klaussinani/shtack) - LIFO Stacks for ES6
 
 ## Team
 
