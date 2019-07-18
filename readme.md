@@ -19,7 +19,7 @@
 
 ES6 implementation of the circular and linear singly linked list data structures with TypeScript support.
 
-Come over to [Gitter](https://gitter.im/klaussinani/singlie) or [Twitter](https://twitter.com/klaussinani) to share your thoughts on the project.
+Come over to [Gitter](https://gitter.im/klaussinani/singlie) to share your thoughts on the project.
 
 Visit the [contributing guidelines](https://github.com/klaussinani/singlie/blob/master/contributing.md#translating-documentation) to learn more on how to translate this document into more languages.
 
