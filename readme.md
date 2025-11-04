@@ -3,7 +3,7 @@
 </h1>
 
 <h4 align="center">
-  Singly circular & linear linked lists for ES6
+  Singly circular & linear linked lists
 </h4>
 
 ## Description
