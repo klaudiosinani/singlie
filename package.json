@@ -27,20 +27,13 @@
   ],
   "types": "types/singlie.d.ts",
   "scripts": {
-    "lint": "xo",
     "test:ts": "tsc --noEmit -p test/types",
-    "test:js": "npm run lint && nyc ava",
-    "test": "npm run test:ts && npm run test:js",
-    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+    "test:js": "nyc ava",
+    "test": "npm run test:ts && npm run test:js"
   },
   "devDependencies": {
-    "ava": "2.3.0",
-    "coveralls": "^3.0.1",
-    "nyc": "^12.0.2",
-    "typescript": "^3.5.3",
-    "xo": "*"
-  },
-  "xo": {
-    "space": 2
+    "ava": "6.4.1",
+    "nyc": "17.1.0",
+    "typescript": "5.9.3"
   }
 }
