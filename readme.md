@@ -6,22 +6,12 @@
   Singly circular & linear linked lists for ES6
 </h4>
 
-<p align="center">
-  <a href="https://travis-ci.com/klaussinani/singlie">
-    <img alt="Build Status" src="https://travis-ci.com/klaussinani/singlie.svg?branch=master">
-  </a>
-  <a href='https://coveralls.io/github/klaussinani/singlie?branch=master'>
-    <img alt="Coverage Status" src="https://coveralls.io/repos/github/klaussinani/singlie/badge.svg?branch=master">
-  </a>
-</p>
-
 ## Description
 
-ES6 implementation of the circular and linear singly linked list data structures with TypeScript support.
+TypeScript implementation of the circular and linear singly linked list data structures.
 
-Come over to [Gitter](https://gitter.im/klaussinani/singlie) to share your thoughts on the project.
 
-Visit the [contributing guidelines](https://github.com/klaussinani/singlie/blob/master/contributing.md#translating-documentation) to learn more on how to translate this document into more languages.
+Visit the [contributing guidelines](https://github.com/klaudiosinani/singlie/blob/master/contributing.md#translating-documentation) to learn more on how to translate this document into more languages.
 
 ## Contents
 
@@ -37,23 +27,15 @@ Visit the [contributing guidelines](https://github.com/klaussinani/singlie/blob/
 
 ## Install
 
-### Yarn
-
-```bash
-yarn add singlie
-```
-
-### NPM
-
 ```bash
 npm install singlie
 ```
 
 ## Usage
 
-Singlie exposes a chainable API, that can be utilized through a simple and minimal syntax, allowing you to combine methods effectively.
+Singlie exposes a fluent API that can be utilized through a simple and minimal syntax, allowing you to combine methods effectively.
 
-Usage examples can be also found at the [`test`](https://github.com/klaussinani/singlie/tree/master/test) directory.
+Usage examples can be also found at the [`test`](https://github.com/klaudiosinani/singlie/tree/master/test) directory.
 
 ```js
 const {Circular, Linear} = require('singlie');
@@ -85,7 +67,11 @@ circular.map(x => `[${x}]`).reverse().toArray();
 
 ### Linear Singly Linked List
 
-Linear singly linked lists can contain multiple nodes, where each node has only a `value` and a `next` attribute. The `value` attribute holds the value stored inside of the node, and the `next` attribute points to the next node in line. The only exception, is that the last node of the list has `null` stored to its `next` attribute, which indicates the lack of further nodes down the line, thus the end of the list. The following example demonstrates the operations that can be performed on any linear singly linked list.
+Linear singly linked lists can contain multiple nodes, where each node has only a `value` and a `next` attribute. The
+`value` attribute holds the value stored inside the node, and the `next` attribute points to the next node in line.
+The only exception, is that the last node of the list has `null` stored to its `next` attribute, which indicates the
+lack of further nodes down the line, thus the end of the list. The following example demonstrates the operations that
+can be performed on any linear singly linked list.
 
 ```js
 const {Linear} = require('singlie');
@@ -144,7 +130,10 @@ linear.clear(); // => Linear { head: null, length: 0 }
 
 ### Circular Singly Linked List
 
-Circular singly linked lists can also contain multiple nodes, where again each node has the same `value` and `next` attributes. The only difference compared to linear lists, is that the last node always points back to the first node / head of the list, thus the list is said to be circular or circularly linked. The following example demonstrates the operations that can be performed on any circular singly linked list.
+Circular singly linked lists can also contain multiple nodes, where again each node has the same `value` and `next`
+attributes. The only difference compared to linear lists is that the last node always points back to the first node /
+head of the list, thus the list is said to be circular or circularly linked. The following example demonstrates the
+operations that can be performed on any circular singly linked list.
 
 ```js
 const {Circular} = require('singlie');
@@ -206,7 +195,9 @@ circular.clear(); // => Circular { head: null, length: 0 }
 
 ## API
 
-The following documentation holds for both circular & linear lists. The described `list` instance is used to depict the same methods that are applicable to both a linear and a circular linked list, without overlooking their above described differences and unique qualities.
+The following documentation holds for both circular & linear lists. The described `list` instance is used to depict the
+same methods that are applicable to both a linear and a circular linked list, without overlooking their above-described
+differences and unique qualities.
 
 #### list.`append(value[, value])`
 
@@ -218,7 +209,7 @@ Appends one of more nodes to the list.
 
 - Type: `any`
 
-Can be one or more comma delimited values. Each value corresponds to a single node.
+Can be one or more comma-delimited values. Each value corresponds to a single node.
 
 ```js
 list.append('A', 'B', 'C', 'D');
@@ -235,10 +226,10 @@ Prepends one of more nodes to the list.
 
 - Type: `any`
 
-Can be one or more comma delimited values. Each value corresponds to a single node.
+Can be one or more comma-delimited values. Each value corresponds to a single node.
 
 ```js
-list.append('C' , 'D');
+list.append('C', 'D');
 // => { value: 'C', next: [List] }
 list.prepend('B', 'A');
 // => { value: 'A', next: { value: 'B', next: { value: 'C', next: [List] } } }
@@ -284,7 +275,7 @@ list.length;
 
 - Return Type: `Boolean`
 
-Checks whether or not the list is empty.
+Checks whether the list is empty.
 
 ```js
 list.append('A', 'B');
@@ -302,7 +293,7 @@ Inserts one or more nodes to the given index.
 
 - Type: `any`
 
-Can be one or more comma delimited values. Each value corresponds to a single node.
+Can be one or more comma-delimited values. Each value corresponds to a single node.
 
 ##### **`index`**
 
@@ -342,7 +333,7 @@ node.next;
 
 - Return Type: `any`
 
-Return the value of node corresponding to the given index.
+Return the value of the node corresponding to the given index.
 
 ##### **`index`**
 
@@ -420,7 +411,7 @@ Joins the values of all nodes on the list into a string and returns the string.
 - Type: `String`
 - Default: `Comma ','`
 
-Specifies a string to separate each pair of adjacent node values of the array. 
+Specifies a string to separate each pair of adjacent node values of the array.
 
 If omitted, the node values are separated with a `comma ','`.
 
@@ -506,7 +497,9 @@ Executes a reducer function on each member of the list resulting in a single out
 
 - Type: `Function`
 
-The reducer function takes two arguments: accumulator & current value. The reducer function's returned value is assigned to the accumulator, whose value is remembered across each iteration throughout the list and ultimately becomes the final, single resulting value.
+The reducer function takes two arguments: accumulator & current value. The reducer function's returned value is assigned
+to the accumulator, whose value is remembered across each iteration throughout the list and ultimately becomes the
+final, single resulting value.
 
 ```js
 list.append(20, 50, 35, 41, 5, 67);
@@ -519,7 +512,8 @@ list.reduce((acc, x) => acc > x ? acc : x, -Infinity);
 
 - Return Type: `Boolean`
 
-The method determines whether a list, circular or linear, includes a certain value among its nodes, returning `true` or `false` as appropriate.
+The method determines whether a list, circular or linear, includes a certain value among its nodes, returning `true` or
+`false` as appropriate.
 
 ##### **`value`**
 
@@ -542,7 +536,8 @@ list.includes(50);
 
 - Return Type: `Number`
 
-The method returns the first index at which a given element can be found in the circular/linear linked list, or -1 if it is not present.
+The method returns the first index at which a given element can be found in the circular/linear linked list, or -1 if it
+is not present.
 
 ##### **`value`**
 
@@ -632,9 +627,11 @@ list.toLinear().isLinear();
 // => true
 ```
 
-Also available, along with the `Circular` and `Linear` exposed classes, is the `Node` class, mainly useful for testing purposes, since it can be utilized to compare nodes residing in linear & circular linked lists. The class has a unary constructor method, with a `'value'` parameter, corresponding to the data stored in the created instance. 
+Also available, along with the `Circular` and `Linear` exposed classes, is the `Node` class, mainly useful for testing
+purposes, since it can be utilized to compare nodes residing in linear & circular linked lists. The class has a unary
+constructor method, with a `'value'` parameter, corresponding to the data stored in the created instance.
 
-Additionally, each `Node` instance has the following two public properties: 
+Additionally, each `Node` instance has the following two public properties:
 
 #### node.`value`
 
@@ -678,7 +675,8 @@ node1.next = node2; // `node1` now points to `node2`
 
 ## Development
 
-For more info on how to contribute to the project, please read the [contributing guidelines](https://github.com/klaussinani/singlie/blob/master/contributing.md).
+For more info on how to contribute to the project, please read
+the [contributing guidelines](https://github.com/klaudiosinani/singlie/blob/master/contributing.md).
 
 - Fork the repository and clone it to your machine
 - Navigate to your local fork: `cd singlie`
@@ -687,20 +685,20 @@ For more info on how to contribute to the project, please read the [contributing
 
 ## Related
 
-- [avlbinstree](https://github.com/klaussinani/avlbinstree) - AVL self-balancing binary search trees for ES6
-- [binoheap](https://github.com/klaussinani/binoheap) - Binomial heaps for ES6
-- [binstree](https://github.com/klaussinani/binstree) - Binary search trees for ES6
-- [doublie](https://github.com/klaussinani/doublie) - Doubly circular & linear linked lists for ES6
-- [dsforest](https://github.com/klaussinani/dsforest) - Disjoint-set forests for ES6
-- [kiu](https://github.com/klaussinani/kiu) - FIFO Queues for ES6
-- [mheap](https://github.com/klaussinani/mheap) - Binary min & max heaps for ES6
-- [prioqueue](https://github.com/klaussinani/prioqueue) - Priority queues for ES6
-- [shtack](https://github.com/klaussinani/shtack) - LIFO Stacks for ES6
+- [avlbinstree](https://github.com/klaudiosinani/avlbinstree) - AVL self-balancing binary search trees for ES6
+- [binoheap](https://github.com/klaudiosinani/binoheap) - Binomial heaps for ES6
+- [binstree](https://github.com/klaudiosinani/binstree) - Binary search trees for ES6
+- [doublie](https://github.com/klaudiosinani/doublie) - Doubly circular & linear linked lists for ES6
+- [dsforest](https://github.com/klaudiosinani/dsforest) - Disjoint-set forests for ES6
+- [kiu](https://github.com/klaudiosinani/kiu) - FIFO Queues for ES6
+- [mheap](https://github.com/klaudiosinani/mheap) - Binary min & max heaps for ES6
+- [prioqueue](https://github.com/klaudiosinani/prioqueue) - Priority queues for ES6
+- [shtack](https://github.com/klaudiosinani/shtack) - LIFO Stacks for ES6
 
 ## Team
 
-- Klaus Sinani [(@klaussinani)](https://github.com/klaussinani)
+- Klaudio Sinani [(@klaudiosinani)](https://github.com/klaudiosinani)
 
 ## License
 
-[MIT](https://github.com/klaussinani/singlie/blob/master/license.md)
+[MIT](https://github.com/klaudiosinani/singlie/blob/master/license.md)
