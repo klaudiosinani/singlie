@@ -10,7 +10,6 @@
 
 TypeScript implementation of the circular and linear singly linked list data structures.
 
-
 Visit the [contributing guidelines](https://github.com/klaudiosinani/singlie/blob/master/contributing.md#translating-documentation) to learn more on how to translate this document into more languages.
 
 ## Contents
@@ -33,14 +32,15 @@ npm install singlie
 
 ## Usage
 
-Singlie exposes a fluent API that can be utilized through a simple and minimal syntax, allowing you to combine methods effectively.
+Singlie exposes a fluent API that can be utilized through a simple and minimal syntax, allowing you to combine methods
+effectively.
 
 Usage examples can be also found at the [`test`](https://github.com/klaudiosinani/singlie/tree/master/test) directory.
 
-```js
-const {Circular, Linear} = require('singlie');
+```typescript
+import {Circular, Linear} from 'singlie';
 
-const linear = new Linear();
+const linear = new Linear<string>();
 linear.prepend('A').append('B');
 linear.head;
 // => Node { value: 'A', next: Node { value: 'B', next: null } }
@@ -51,7 +51,7 @@ linear.head.next.next;
 linear.map(x => `[${x}]`).reverse().join(' -> ');
 // => [B] -> [A]
 
-const circular = new Circular();
+const circular = new Circular<string>();
 circular.append('B').prepend('A');
 circular.head;
 // => Node { value: 'A', next: Node { value: 'B', next: [Circular] } }
@@ -73,10 +73,10 @@ The only exception, is that the last node of the list has `null` stored to its `
 lack of further nodes down the line, thus the end of the list. The following example demonstrates the operations that
 can be performed on any linear singly linked list.
 
-```js
-const {Linear} = require('singlie');
+```typescript
+import {Linear} from 'singlie';
 
-const linear = new Linear();
+const linear = new Linear<string>();
 
 // Append a node holding the value `E`
 linear.append('E');
@@ -115,9 +115,9 @@ linear.set({value: 'G', index: linear.length - 1});
 linear.join(' '); // => A B C D E F G
 
 // Iterate over the list
-const array = [];
+const array: string[] = [];
 linear.forEach(x => array.push(x));
-log(array);
+console.log(array);
 // => [ 'A', 'B', 'C', 'D', 'E', 'F', 'G' ]
 
 // Chain multiple methods
@@ -135,11 +135,10 @@ attributes. The only difference compared to linear lists is that the last node a
 head of the list, thus the list is said to be circular or circularly linked. The following example demonstrates the
 operations that can be performed on any circular singly linked list.
 
-```js
-const {Circular} = require('singlie');
+```typescript
+import {Circular} from 'singlie';
 
-const circular = new Circular();
-const {log} = console;
+const circular = new Circular<string>();
 
 // Append a node holding the value `E`
 circular.append('E');
@@ -180,9 +179,9 @@ circular.set({value: 'G', index: circular.length - 1});
 circular.join(' '); // => A B C D E F G
 
 // Iterate over the list
-const array = [];
+const array: string[] = [];
 circular.forEach(x => array.push(x));
-log(array);
+console.log(array);
 // => [ 'A', 'B', 'C', 'D', 'E', 'F', 'G' ]
 
 // Chain multiple methods
@@ -211,7 +210,7 @@ Appends one of more nodes to the list.
 
 Can be one or more comma-delimited values. Each value corresponds to a single node.
 
-```js
+```typescript
 list.append('A', 'B', 'C', 'D');
 // => { value: 'A', next: { value: 'B', next: [List] } }
 ```
@@ -228,7 +227,7 @@ Prepends one of more nodes to the list.
 
 Can be one or more comma-delimited values. Each value corresponds to a single node.
 
-```js
+```typescript
 list.append('C', 'D');
 // => { value: 'C', next: [List] }
 list.prepend('B', 'A');
@@ -241,7 +240,7 @@ list.prepend('B', 'A');
 
 Returns the first node / head on the list.
 
-```js
+```typescript
 list.append('A', 'B');
 list.head;
 // => Node { value: 'A', next: [Node] }
@@ -253,7 +252,7 @@ list.head;
 
 Returns the last node on the list.
 
-```js
+```typescript
 list.append('A', 'B');
 list.last;
 // => Node { value: 'B', next: [Node] }
@@ -265,7 +264,7 @@ list.last;
 
 Returns the length of the list.
 
-```js
+```typescript
 list.append('A', 'B');
 list.length;
 // => 2
@@ -277,7 +276,7 @@ list.length;
 
 Checks whether the list is empty.
 
-```js
+```typescript
 list.append('A', 'B');
 list.isEmpty();
 // => false
@@ -301,7 +300,7 @@ Can be one or more comma-delimited values. Each value corresponds to a single no
 
 Can be an integer corresponding to a list index.
 
-```js
+```typescript
 list.append('A', 'B', 'E');
 list.insert({value: ['C', 'D'], index: 1});
 // => { value: 'A', next: { value: 'D', next: { value: 'C', next: { value: 'B', next: [List] } } } }
@@ -319,7 +318,7 @@ Return the node corresponding to the given index.
 
 Can be an integer corresponding to a list index.
 
-```js
+```typescript
 list.append('A', 'B', 'C', 'D');
 const node = list.node(0);
 // => { value: 'A', next: { value: 'B', next: [List] } }
@@ -341,7 +340,7 @@ Return the value of the node corresponding to the given index.
 
 Can be an integer corresponding to a list index.
 
-```js
+```typescript
 list.append('A', 'B');
 
 list.get(0);
@@ -365,7 +364,7 @@ Can be an integer corresponding to a list index.
 
 If not provided, the last node of the list will be removed.
 
-```js
+```typescript
 list.append('A', 'B', 'C', 'D');
 // => { value: 'A', next: [List] }
 list.remove(0);
@@ -380,7 +379,7 @@ list.remove(0);
 
 Converts the list into an array.
 
-```js
+```typescript
 list.append('A', 'B', 'C');
 // => { value: 'A', next: { value: 'B', next: [List] } }
 const array = list.toArray();
@@ -393,7 +392,7 @@ const array = list.toArray();
 
 Removes all nodes from the list.
 
-```js
+```typescript
 list.append('A', 'B', 'C');
 // => { value: 'A', next: { value: 'B', next: [List] } }
 list.clear();
@@ -415,7 +414,7 @@ Specifies a string to separate each pair of adjacent node values of the array.
 
 If omitted, the node values are separated with a `comma ','`.
 
-```js
+```typescript
 list.append('A', 'B', 'C');
 // => { value: 'A', next: { value: 'B', next: [List] } }
 list.join();
@@ -438,7 +437,7 @@ Executes a provided function once for each node value.
 
 Function to execute for each node value.
 
-```js
+```typescript
 const array = [];
 list.append('A', 'B', 'C');
 // => { value: 'A', next: { value: 'B', next: [List] } }
@@ -459,7 +458,7 @@ Executes a provided function once for each node value.
 
 Function that produces a new node value for the new list.
 
-```js
+```typescript
 list.append('A', 'B', 'C');
 // => { value: 'A', next: { value: 'B', next: [List] } }
 const mapped = list.map(x => `[${x}]`);
@@ -479,7 +478,7 @@ Creates a new liked list with all elements that pass the test implemented by the
 
 Function is a predicate, to test each element of the list. Return true to keep the element, false otherwise.
 
-```js
+```typescript
 list.append(1, 2, 3, 4, 5, 6);
 // => { value: 1, next: { value: 2, next: [List] } }
 const filtered = list.filter(x => x % 2 > 0);
@@ -501,7 +500,7 @@ The reducer function takes two arguments: accumulator & current value. The reduc
 to the accumulator, whose value is remembered across each iteration throughout the list and ultimately becomes the
 final, single resulting value.
 
-```js
+```typescript
 list.append(20, 50, 35, 41, 5, 67);
 // => { value: 20, next: { value: 50, next: [List] } }
 list.reduce((acc, x) => acc > x ? acc : x, -Infinity);
@@ -521,7 +520,7 @@ The method determines whether a list, circular or linear, includes a certain val
 
 The value to search for.
 
-```js
+```typescript
 list.append(20, 50, 35, 41, 5, 67);
 // => { value: 20, next: { value: 50, next: [List] } }
 list.includes();
@@ -545,7 +544,7 @@ is not present.
 
 Element to locate in the array.
 
-```js
+```typescript
 list.append(20, 50, 35, 41, 5, 67);
 // => { value: 20, next: { value: 50, next: [List] } }
 list.indexOf();
@@ -562,39 +561,9 @@ list.indexOf(41);
 
 Returns a string representing the specified list and its elements.
 
-```js
+```typescript
 list.append(20, 50, 35, 41, 5, 67);
 // => '20,50,35,41,5,67'
-```
-
-#### list.`isCircular()`
-
-- Return Type: `Boolean`
-
-Returns `true` if the linked list is circular or `false` if it is linear.
-
-```js
-const {Circular} = require('singlie');
-
-const list = new Circular();
-
-list.isCircular();
-// => true
-```
-
-#### list.`isLinear()`
-
-- Return Type: `Boolean`
-
-Returns `true` if the linked list is linear or `false` if it is circular.
-
-```js
-const {Circular} = require('singlie');
-
-const list = new Circular();
-
-list.isLinear();
-// => false
 ```
 
 #### linear.`toCircular()`
@@ -603,8 +572,8 @@ list.isLinear();
 
 Returns a new circular linked list containing all elements of the original linear linked list.
 
-```js
-const {Linear} = require('singlie');
+```typescript
+import {Linear} from 'singlie';
 
 const list = new Linear();
 
@@ -618,8 +587,8 @@ list.toCircular().isLinear();
 
 Returns a new linear linked list containing all elements of the original circular linked list.
 
-```js
-const {Circular} = require('singlie');
+```typescript
+import {Circular} from 'singlie';
 
 const list = new Circular();
 
@@ -639,8 +608,8 @@ Additionally, each `Node` instance has the following two public properties:
 
 The value that the node contains.
 
-```js
-const {Node} = require('singlie');
+```typescript
+import {Node} from 'singlie';
 
 const node = new Node('A');
 // => { value: 'A', next: null }
@@ -658,7 +627,7 @@ node.value = 'B' // Update the `value` attribute to 'B'
 
 The next node in line, that the targeted node instance points to.
 
-```js
+```typescript
 const {Node} = require('singlie');
 
 const node1 = new Node('A');
@@ -680,8 +649,9 @@ the [contributing guidelines](https://github.com/klaudiosinani/singlie/blob/mast
 
 - Fork the repository and clone it to your machine
 - Navigate to your local fork: `cd singlie`
-- Install the project dependencies: `npm install` or `yarn install`
-- Lint the code and run the tests: `npm test` or `yarn test`
+- Install the project dependencies: `npm install`
+- Build the typescript source code: `npm run build`
+- Run the tests: `npm test`
 
 ## Related
 
