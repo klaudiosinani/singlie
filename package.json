@@ -34,7 +34,7 @@
         "test:property": "jest --testNamePattern='Property'",
         "test:parameterized": "jest --testNamePattern='Parameterized'",
         "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
-        "test:types": "tsc --project test-tsconfig.json --noEmit"
+        "test:types": "tsc --noEmit"
     },
     "devDependencies": {
         "@jest/globals": "30.2.0",
