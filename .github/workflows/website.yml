@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: GitHub Pages Deployment
 
 on:
     push:
@@ -28,6 +28,9 @@ jobs:
 
             -   name: Setup Pages
                 uses: actions/configure-pages@v4
+
+            -   name: Install Jekyll
+                run: gem install jekyll bundler
 
             -   name: Build Jekyll site
                 run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"

@@ -1,4 +1,4 @@
-name: CI - Tests, Build & Quality
+name: CI
 
 on:
     push:
@@ -6,10 +6,10 @@ on:
         tags: [ 'v*' ]
     pull_request:
         branches: [ master ]
-    paths-ignore:
-        - "*.md"
-        - "docs/**"
-        - "media/**"
+        paths-ignore:
+            - "*.md"
+            - "docs/**"
+            - "media/**"
 
 concurrency:
     group: ${{ github.workflow }}-${{ github.ref }}
@@ -53,7 +53,7 @@ jobs:
 
             -   name: Upload coverage artifact
                 if: matrix.os == 'ubuntu-latest' && matrix.node-version == '22.x'
-                uses: actions/upload-artifact@v3
+                uses: actions/upload-artifact@v5
                 with:
                     name: coverage-report
                     path: coverage/
@@ -137,10 +137,20 @@ jobs:
                     cache: npm
 
             -   name: Download coverage artifact
-                uses: actions/download-artifact@v3
+                uses: actions/download-artifact@v6
                 with:
                     name: coverage-report
                     path: coverage/
+
+            -   name: Verify coverage output
+                run: |
+                    if [ ! -f coverage/lcov.info ]; then
+                      echo "❌ ERROR: coverage/lcov.info not found"
+                      ls -la coverage/ || echo "coverage/ directory doesn't exist"
+                      exit 1
+                    fi
+                    echo "✅ Coverage output found"
+                    head -20 coverage/lcov.info
 
             -   name: Upload coverage to Codecov
                 uses: codecov/codecov-action@v5
@@ -155,13 +165,16 @@ jobs:
                 env:
                     SONAR_HOST_URL: https://sonarcloud.io
                     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                 with:
                     args: >
                         -Dsonar.projectKey=klaudiosinani_singlie
+                        -Dsonar.organization=klaudiosinani
                         -Dsonar.sources=src
                         -Dsonar.tests=test
                         -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
                         -Dsonar.coverage.exclusions=**/*.spec.ts,node_modules/**
+                        -Dsonar.scm.revision=${{ github.event.pull_request.head.sha }}
 
             -   name: SonarQube Quality Gate
                 uses: SonarSource/sonarqube-quality-gate-action@master
