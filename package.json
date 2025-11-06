@@ -1,39 +1,48 @@
 {
-  "name": "singlie",
-  "version": "2.1.0",
-  "description": "Singly circular & linear linked lists for ES6",
-  "license": "MIT",
-  "repository": "klaudiosinani/singlie",
-  "author": {
-    "name": "Klaudio Sinani",
-    "email": "klaudiosinani@protonmail.ch",
-    "url": "https://klaudiosinani.com"
-  },
-  "files": [
-    "index.js",
-    "src",
-    "types"
-  ],
-  "keywords": [
-    "singlie",
-    "singly",
-    "linear",
-    "circular",
-    "linked",
-    "list",
-    "data",
-    "structure",
-    "typescript"
-  ],
-  "types": "types/singlie.d.ts",
-  "scripts": {
-    "test:ts": "tsc --noEmit -p test/types",
-    "test:js": "nyc ava",
-    "test": "npm run test:ts && npm run test:js"
-  },
-  "devDependencies": {
-    "ava": "6.4.1",
-    "nyc": "17.1.0",
-    "typescript": "5.9.3"
-  }
+    "name": "singlie",
+    "version": "2.1.0",
+    "description": "Singly circular & linear linked lists for ES6",
+    "license": "MIT",
+    "repository": "klaudiosinani/singlie",
+    "author": {
+        "name": "Klaudio Sinani",
+        "email": "klaudiosinani@protonmail.ch",
+        "url": "https://klaudiosinani.com"
+    },
+    "files": [
+        "index.js",
+        "src",
+        "types"
+    ],
+    "keywords": [
+        "singlie",
+        "singly",
+        "linear",
+        "circular",
+        "linked",
+        "list",
+        "data",
+        "structure",
+        "typescript"
+    ],
+    "types": "types/singlie.d.ts",
+    "scripts": {
+        "build": "tsc",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:coverage": "jest --coverage",
+        "test:property": "jest --testNamePattern='Property'",
+        "test:parameterized": "jest --testNamePattern='Parameterized'",
+        "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
+        "test:types": "tsc --project test-tsconfig.json --noEmit"
+    },
+    "devDependencies": {
+        "@jest/globals": "30.2.0",
+        "@types/jest": "30.0.0",
+        "@types/node": "24.10.0",
+        "fast-check": "4.3.0",
+        "jest": "30.2.0",
+        "ts-jest": "29.4.5",
+        "typescript": "5.9.3"
+    }
 }
