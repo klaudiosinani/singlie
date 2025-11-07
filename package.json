@@ -1,7 +1,7 @@
 {
     "name": "singlie",
     "version": "2.1.0",
-    "description": "Singly circular & linear linked lists for ES6",
+    "description": "Singly circular & linear linked lists",
     "license": "MIT",
     "repository": "klaudiosinani/singlie",
     "author": {
@@ -9,10 +9,17 @@
         "email": "klaudiosinani@protonmail.ch",
         "url": "https://klaudiosinani.com"
     },
+    "contributors": [
+        {
+            "name": "Mario Sinani",
+            "email": "mario.sinani@imperial.ac.uk",
+            "url": "https://profiles.imperial.ac.uk/mario.sinani"
+        }
+    ],
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "files": [
-        "index.js",
-        "src",
-        "types"
+        "dist"
     ],
     "keywords": [
         "singlie",
@@ -25,7 +32,6 @@
         "structure",
         "typescript"
     ],
-    "types": "types/singlie.d.ts",
     "scripts": {
         "build": "tsc",
         "test": "jest",
