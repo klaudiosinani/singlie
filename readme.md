@@ -655,15 +655,15 @@ the [contributing guidelines](https://github.com/klaudiosinani/singlie/blob/mast
 
 ## Related
 
-- [avlbinstree](https://github.com/klaudiosinani/avlbinstree) - AVL self-balancing binary search trees for ES6
-- [binoheap](https://github.com/klaudiosinani/binoheap) - Binomial heaps for ES6
-- [binstree](https://github.com/klaudiosinani/binstree) - Binary search trees for ES6
-- [doublie](https://github.com/klaudiosinani/doublie) - Doubly circular & linear linked lists for ES6
-- [dsforest](https://github.com/klaudiosinani/dsforest) - Disjoint-set forests for ES6
-- [kiu](https://github.com/klaudiosinani/kiu) - FIFO Queues for ES6
-- [mheap](https://github.com/klaudiosinani/mheap) - Binary min & max heaps for ES6
-- [prioqueue](https://github.com/klaudiosinani/prioqueue) - Priority queues for ES6
-- [shtack](https://github.com/klaudiosinani/shtack) - LIFO Stacks for ES6
+- [avlbinstree](https://github.com/klaudiosinani/avlbinstree) - AVL self-balancing binary search trees
+- [binoheap](https://github.com/klaudiosinani/binoheap) - Binomial heaps
+- [binstree](https://github.com/klaudiosinani/binstree) - Binary search trees
+- [doublie](https://github.com/klaudiosinani/doublie) - Doubly circular & linear linked lists
+- [dsforest](https://github.com/klaudiosinani/dsforest) - Disjoint-set forests
+- [kiu](https://github.com/klaudiosinani/kiu) - FIFO Queues
+- [mheap](https://github.com/klaudiosinani/mheap) - Binary min and max heaps
+- [prioqueue](https://github.com/klaudiosinani/prioqueue) - Priority queues
+- [shtack](https://github.com/klaudiosinani/shtack) - LIFO Stacks
 
 ## Team
 
