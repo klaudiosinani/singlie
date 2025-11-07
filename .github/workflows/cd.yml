@@ -3,8 +3,10 @@ name: CD
 on:
     workflow_run:
         workflows: [ 'CI' ]
-        types: [ completed ]
-        branches: [ master ]
+        types:
+            - completed
+        branches:
+            - master
     workflow_dispatch:
         inputs:
             tag:
@@ -22,10 +24,20 @@ permissions:
     id-token: write
 
 jobs:
+    verify_ci:
+        name: Verify CI Success
+        runs-on: ubuntu-latest
+        if: github.event_name == 'workflow_run'
+        steps:
+            -   name: Check CI workflow result
+                if: github.event.workflow_run.conclusion != 'success'
+                run: |
+                    echo "CI workflow failed or was cancelled"
+                    exit 1
+
     check_release:
         name: Check Release Tag
         runs-on: ubuntu-latest
-        if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
         outputs:
             proceed: ${{ github.event_name == 'workflow_dispatch' && 'true' || steps.check_tag.outputs.proceed }}
             release_tag: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || steps.check_tag.outputs.release_tag }}
@@ -40,12 +52,10 @@ jobs:
                 if: github.event_name != 'workflow_dispatch'
                 id: check_tag
                 run: |
-                    COMMIT_SHA=${{ github.event.workflow_run.head_commit.id }}
-
-                    TAGS=$(git tag --points-at "$COMMIT_SHA" | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9.-]+)?(\+[a-zA-Z0-9.-]+)?$' || true)
+                    TAGS=$(git tag --points-at ${{ github.sha }} | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9.-]+)?(\+[a-zA-Z0-9.-]+)?$' || true)
 
                     if [[ -z "$TAGS" ]]; then
-                      echo "No release tag found for commit $COMMIT_SHA"
+                      echo "No release tag found for commit ${{ github.sha }} on main branch"
                       echo "proceed=false" >> $GITHUB_OUTPUT
                       exit 0
                     fi
@@ -68,12 +78,12 @@ jobs:
         runs-on: ubuntu-latest
         needs: check_release
         if: needs.check_release.outputs.proceed == 'true'
-        environment: npm
+        environment: NPM
         steps:
             -   name: Checkout
                 uses: actions/checkout@v4
                 with:
-                    ref: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.event.workflow_run.head_commit.id }}
+                    ref: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref }}
                     fetch-depth: 0
 
             -   name: Verify tag matches package.json version
