@@ -3,7 +3,10 @@
     "version": "2.1.0",
     "description": "Singly circular and linear linked lists",
     "license": "MIT",
-    "repository": "klaudiosinani/singlie",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/klaudiosinani/singlie.git"
+    },
     "homepage": "https://klaudiosinani.com/singlie",
     "author": {
         "name": "Klaudio Sinani",
