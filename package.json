@@ -4,6 +4,7 @@
     "description": "Singly circular and linear linked lists",
     "license": "MIT",
     "repository": "klaudiosinani/singlie",
+    "homepage": "https://klaudiosinani.com/singlie",
     "author": {
         "name": "Klaudio Sinani",
         "email": "klaudiosinani@protonmail.ch",
@@ -13,7 +14,7 @@
         {
             "name": "Mario Sinani",
             "email": "mario.sinani@imperial.ac.uk",
-            "url": "https://profiles.imperial.ac.uk/mario.sinani"
+            "url": "https://mariosinani.com"
         }
     ],
     "main": "dist/index.js",
