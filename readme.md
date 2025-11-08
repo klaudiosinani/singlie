@@ -24,6 +24,7 @@ Visit the [contributing guidelines](https://github.com/klaudiosinani/singlie/blo
 - [Development](#development)
 - [Related](#related)
 - [Team](#team)
+- [Citations](#citations)
 - [License](#license)
 
 ## Install
@@ -670,7 +671,29 @@ the [contributing guidelines](https://github.com/klaudiosinani/singlie/blob/mast
 
 ## Team
 
-- Klaudio Sinani [(@klaudiosinani)](https://github.com/klaudiosinani)
+- [Klaudio Sinani](https://github.com/klaudiosinani)
+- [Mario Sinani](https://github.com/mario-sinani)
+
+## Citations
+
+To correctly cite this software in publications, please follow the [`citation.cff`](https://github.com/klaudiosinani/singlie/blob/master/citation.cff) file and the formats below.
+
+### APA
+
+- Sinani, K., & Sinani, M. A. (2025). Singlie: Singly circular and linear linked lists [Computer software]. https://github.com/klaudiosinani/singlie
+
+### BibTeX
+
+```BibTeX
+@software{Sinani_Singlie_Singly_circular_2025,
+author = {Sinani, Klaudio and Sinani, Mario A.},
+license = {MIT},
+month = nov,
+title = {{Singlie: Singly circular and linear linked lists}},
+url = {https://github.com/klaudiosinani/singlie},
+year = {2025}
+}
+```
 
 ## License
 
