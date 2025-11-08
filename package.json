@@ -36,6 +36,9 @@
         "structure",
         "typescript"
     ],
+    "engines": {
+        "node": ">=18"
+    },
     "scripts": {
         "build": "tsc",
         "test": "jest",
