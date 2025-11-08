@@ -3,12 +3,12 @@
 </h1>
 
 <h4 align="center">
-  Singly circular & linear linked lists
+  Singly circular and linear linked lists
 </h4>
 
 ## Description
 
-TypeScript implementation of the circular and linear singly linked list data structures.
+TypeScript implementation of singly circular and linear linked list data-structures with comprehensive property-based test coverage
 
 Visit the [contributing guidelines](https://github.com/klaudiosinani/singlie/blob/master/contributing.md#translating-documentation) to learn more on how to translate this document into more languages.
 
@@ -194,7 +194,7 @@ circular.clear(); // => Circular { head: null, length: 0 }
 
 ## API
 
-The following documentation holds for both circular & linear lists. The described `list` instance is used to depict the
+The following documentation holds for both circular and linear lists. The described `list` instance is used to depict the
 same methods that are applicable to both a linear and a circular linked list, without overlooking their above-described
 differences and unique qualities.
 
@@ -496,13 +496,14 @@ Executes a reducer function on each member of the list resulting in a single out
 
 - Type: `Function`
 
-The reducer function takes two arguments: accumulator & current value. The reducer function's returned value is assigned
+The reducer function takes two arguments: accumulator and current value. The reducer function's returned value is assigned
 to the accumulator, whose value is remembered across each iteration throughout the list and ultimately becomes the
 final, single resulting value.
 
 ```typescript
 list.append(20, 50, 35, 41, 5, 67);
 // => { value: 20, next: { value: 50, next: [List] } }
+const reducer: Reducer<number[], number> = (acc, x) => acc + x;
 list.reduce((acc, x) => acc > x ? acc : x, -Infinity);
 // => 67
 ```
@@ -650,7 +651,7 @@ the [contributing guidelines](https://github.com/klaudiosinani/singlie/blob/mast
 - Fork the repository and clone it to your machine
 - Navigate to your local fork: `cd singlie`
 - Install the project dependencies: `npm install`
-- Build the typescript source code: `npm run build`
+- Build the TypeScript source code: `npm run build`
 - Run the tests: `npm test`
 
 ## Related

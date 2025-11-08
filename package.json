@@ -1,7 +1,7 @@
 {
     "name": "singlie",
     "version": "2.1.0",
-    "description": "Singly circular & linear linked lists",
+    "description": "Singly circular and linear linked lists",
     "license": "MIT",
     "repository": "klaudiosinani/singlie",
     "author": {
