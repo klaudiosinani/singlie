@@ -10,6 +10,8 @@
 
 TypeScript implementation of singly circular and linear linked list data-structures with comprehensive property-based test coverage
 
+The codebase uses zero production dependencies and it weights ~1 kB minified and gzipped.
+
 Visit the [contributing guidelines](https://github.com/klaudiosinani/singlie/blob/master/contributing.md#translating-documentation) to learn more on how to translate this document into more languages.
 
 ## Contents
