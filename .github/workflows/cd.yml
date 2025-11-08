@@ -83,7 +83,7 @@ jobs:
             -   name: Checkout
                 uses: actions/checkout@v4
                 with:
-                    ref: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref }}
+                    ref: ${{ needs.check_release.outputs.release_tag }}
                     fetch-depth: 0
 
             -   name: Verify tag matches package.json version
