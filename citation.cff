@@ -1,16 +1,17 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 type: software
-title: "Singlie: Singly circular & linear linked lists"
+title: "Singlie: Singly circular and linear linked lists"
 authors:
   - family-names: "Sinani"
     given-names: "Klaudio"
     orcid: "https://orcid.org/0009-0006-5171-0848"
+    affiliation: "Sinani Open Research"
   - family-names: "Sinani"
-    given-names: "Mario"
-    orcid: "https://profiles.imperial.ac.uk/mario.sinani"
+    given-names: "Mario A."
+    orcid: "https://orcid.org/0009-0004-2263-786X"
     affiliation: "Imperial College London"
-abstract: "TypeScript implementation of singly circular and linear linked lists with comprehensive property-based test coverage"
+abstract: "TypeScript implementation of the singly circular and linear linked list data-structures with comprehensive property-based test coverage"
 keywords:
   - computer-science
   - singly-linked-list
@@ -21,3 +22,4 @@ keywords:
 license: MIT
 repository-code: "https://github.com/klaudiosinani/singlie"
 url: "https://github.com/klaudiosinani/singlie"
+date-released: 2025-11-08
