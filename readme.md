@@ -16,11 +16,15 @@ Visit the [contributing guidelines](https://github.com/klaudiosinani/singlie/blo
 
 ## Status
 
-- [![CI](https://github.com/klaudiosinani/singlie/actions/workflows/ci.yml/badge.svg)](https://github.com/klaudiosinani/singlie/actions/workflows/ci.yml)
-- [![CD](https://github.com/klaudiosinani/singlie/actions/workflows/cd.yml/badge.svg)](https://github.com/klaudiosinani/singlie/actions/workflows/cd.yml)
-- [![Coverage](https://codecov.io/gh/klaudiosinani/singlie/graph/badge.svg?token=2S1ZWC7ALX)](https://codecov.io/gh/klaudiosinani/singlie)
-- [![GitHub Release](https://img.shields.io/github/v/release/klaudiosinani/singlie?label=Lastest%20Version&color=%2332C955)](https://github.com/klaudiosinani/singlie/releases)
-- [![DOI](https://zenodo.org/badge/137698326.svg)](https://doi.org/10.5281/zenodo.17563627)
+<div align="left">
+
+[![CI](https://github.com/klaudiosinani/singlie/actions/workflows/ci.yml/badge.svg)](https://github.com/klaudiosinani/singlie/actions/workflows/ci.yml)
+[![CD](https://github.com/klaudiosinani/singlie/actions/workflows/cd.yml/badge.svg)](https://github.com/klaudiosinani/singlie/actions/workflows/cd.yml)
+[![Coverage](https://codecov.io/gh/klaudiosinani/singlie/graph/badge.svg?token=2S1ZWC7ALX)](https://codecov.io/gh/klaudiosinani/singlie)
+[![GitHub Release](https://img.shields.io/github/v/release/klaudiosinani/singlie?label=Lastest%20Version&color=%2332C955)](https://github.com/klaudiosinani/singlie/releases)
+[![DOI](https://zenodo.org/badge/137698326.svg)](https://doi.org/10.5281/zenodo.17563627)
+
+</div>
 
 ## Contents
 
