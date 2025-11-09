@@ -23,7 +23,5 @@ license: MIT
 repository-code: "https://github.com/klaudiosinani/singlie"
 url: "https://github.com/klaudiosinani/singlie"
 version: 3.0.0
-identifiers:
-  - type: doi
-    value: 10.5281/zenodo.17563627
+doi: 10.5281/zenodo.17563627
 date-released: 2025-11-08
