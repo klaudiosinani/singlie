@@ -14,9 +14,18 @@ The codebase uses zero production dependencies and it weights ~1 kB minified and
 
 Visit the [contributing guidelines](https://github.com/klaudiosinani/singlie/blob/master/contributing.md#translating-documentation) to learn more on how to translate this document into more languages.
 
+## Status
+
+- [![CI](https://github.com/klaudiosinani/singlie/actions/workflows/ci.yml/badge.svg)](https://github.com/klaudiosinani/singlie/actions/workflows/ci.yml)
+- [![CD](https://github.com/klaudiosinani/singlie/actions/workflows/cd.yml/badge.svg)](https://github.com/klaudiosinani/singlie/actions/workflows/cd.yml)
+- [![Coverage](https://codecov.io/gh/klaudiosinani/singlie/graph/badge.svg?token=2S1ZWC7ALX)](https://codecov.io/gh/klaudiosinani/singlie)
+- [![GitHub Release](https://img.shields.io/github/v/release/klaudiosinani/singlie?label=Lastest%20Version&color=%2332C955)](https://github.com/klaudiosinani/singlie/releases)
+- [![DOI](https://zenodo.org/badge/137698326.svg)](https://doi.org/10.5281/zenodo.17563627)
+
 ## Contents
 
 - [Description](#description)
+- [Status](#status)
 - [Install](#install)
 - [Usage](#usage)
 - [In Depth](#in-depth)
@@ -601,7 +610,7 @@ list.toLinear().isLinear();
 ```
 
 Also available, along with the `Circular` and `Linear` exposed classes, is the `Node` class, mainly useful for testing
-purposes, since it can be utilized to compare nodes residing in linear & circular linked lists. The class has a unary
+purposes, since it can be utilized to compare nodes residing in linear and circular linked lists. The class has a unary
 constructor method, with a `'value'` parameter, corresponding to the data stored in the created instance.
 
 Additionally, each `Node` instance has the following two public properties:
@@ -680,17 +689,19 @@ To correctly cite this software in publications, please follow the [`citation.cf
 
 ### APA
 
-- Sinani, K., & Sinani, M. A. (2025). Singlie: Singly circular and linear linked lists [Computer software]. https://github.com/klaudiosinani/singlie
+- Sinani, K., & Sinani, M. A. (2025). Singlie: Singly circular and linear linked lists (Version 3.0.0) [Computer software]. https://doi.org/10.5281/zenodo.17563627
 
 ### BibTeX
 
 ```BibTeX
 @software{Sinani_Singlie_Singly_circular_2025,
 author = {Sinani, Klaudio and Sinani, Mario A.},
+doi = {10.5281/zenodo.17563627},
 license = {MIT},
 month = nov,
 title = {{Singlie: Singly circular and linear linked lists}},
 url = {https://github.com/klaudiosinani/singlie},
+version = {3.0.0},
 year = {2025}
 }
 ```
