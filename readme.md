@@ -693,7 +693,7 @@ To correctly cite this software in publications, please follow the [`citation.cf
 
 ### APA
 
-- Sinani, K., & Sinani, M. A. (2025). Singlie: Singly circular and linear linked lists (Version 3.0.0) [Computer software]. https://doi.org/10.5281/zenodo.17563627
+- Sinani, K., & Sinani, M. A. (2025). Singlie: Singly circular and linear linked lists (Version 3.0.1) [Computer software]. https://doi.org/10.5281/zenodo.17563627
 
 ### BibTeX
 
@@ -705,7 +705,7 @@ license = {MIT},
 month = nov,
 title = {{Singlie: Singly circular and linear linked lists}},
 url = {https://github.com/klaudiosinani/singlie},
-version = {3.0.0},
+version = {3.0.1},
 year = {2025}
 }
 ```
