@@ -676,7 +676,7 @@ the [contributing guidelines](https://github.com/klaudiosinani/singlie/blob/mast
 
 ## Citations
 
-To correctly cite this software in publications, please follow the [`citation.cff`](https://github.com/klaudiosinani/singlie/blob/master/citation.cff) file and the formats below.
+To correctly cite this software in publications, please follow the [`citation.cff`](https://github.com/klaudiosinani/singlie/blob/master/CITATION.cff) file and the formats below.
 
 ### APA
 
