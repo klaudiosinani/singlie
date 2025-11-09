@@ -1,6 +1,6 @@
 {
     "name": "singlie",
-    "version": "3.0.0",
+    "version": "3.0.1",
     "description": "Singly circular and linear linked lists",
     "license": "MIT",
     "repository": {
